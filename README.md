@@ -1,5 +1,3 @@
-# Proyecto-Programacion
-Proyecto de Programacion
 # Lista de Tareas pendientes:
 
 - Acabar el proyecto [ ]
