@@ -1,2 +1,8 @@
 import funciones
+import categorias
+
+
+
+
+
 
