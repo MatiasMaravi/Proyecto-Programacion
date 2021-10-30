@@ -1,5 +1,10 @@
-import funciones
-import categorias
+import funcion
+import categoria
+
+funcion.jugar("perro")
+
+
+
 
 
 
