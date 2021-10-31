@@ -1,3 +1,5 @@
+
+
 #Categorias para jugar
 #Son 5 frases por categoria es un ejemplo 
 
@@ -35,6 +37,8 @@ Cursos_de_CS = ["Mates discretas", "Calculo", "Programacion"]
 
 #Adrian
 
+platos_tipicos = ["lomo saltado", "Papa a la huancaina", "Aji de gallina", "anticuchos", "pachamanca"]
 
+refranes = ["De tal palo tal astilla", "Mas vale prevenir que lamentar", "Al que madruga Dios lo ayuda", "Al mal tiempo buena cara", "Hombre prevenido vale por dos"]
 
 

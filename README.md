@@ -14,7 +14,7 @@
 - Función para mostrar un tablero que le permita al usuario ir seleccionando letras y adivinando la frase [✔]
 
 - Función para que "sólo permita ingresar letras"(nada de numeros ni caracteres extraños). [ ]
-- Función para que el juego termine pasados los 6 intentos. [ ]
+- Función para que el juego termine pasados los 6 intentos. [✔]
 
 ### El tablero debe mostrar estas cosas: [ ]
 1. Nombre del juego
