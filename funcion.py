@@ -1,7 +1,6 @@
 import os  #Funciones del sistema operativo
 import platform  #Funciones para averiguar cosas sobre la plataforma
-import categoria #importamos las listas 
-import random
+import random #Funciones para valores aleatorios
 
 #Aqui van sus funciones no olviden luego yo lo ordeno en el main
 
@@ -16,71 +15,104 @@ def limpiar_consola():
   else:
       os.system("clear")
 
+def letra_repetida(letra, lista):
+  """
+  Parametros:
+  letra -- valor que vas a ver si se repite en una lista
+  lista -- lista de valores 
+
+  La funcion compara si la variable que ingresamos se encuentra
+  en la lista y retorna "False" de ser el caso.
+  En caso la letra no se encuentre en la lista retorna "True"
+  """
+  lista_respaldo = [letra]
+  for i in lista:
+      if i  in lista_respaldo:
+          return False     
+      else:
+          lista_respaldo.append(i)
+  return True
 
 def jugar(adivinar: str): 
   """
-  Esta funcion recibe como parametro una palabra
+  Esta funcion recibe como parametro una lista de caracteres
   en mayusculas y comenzara a iterar letra por letra
-  de la palabra a advinar buscando similitudes con las letras que 
-  vayamos ingresando, si no encuentra letras coincidentes
-  imprimira un guion bajo en su lugar.
+  de la palabra a advinar buscando similitudes con las letras que vamos ingresando 
+  Si no encuentra letras coincidentes imprimira un guion bajo en su lugar.
   
   Parámetros:
-    adivinar -- palabra o frase que se utilizara para iterar(Solo
-    pueden ser letras) 
+    adivinar -- letras_ingresadas o frase que se utilizara para iterar(Solo
+    pueden ser letras_ingresadas) 
 
-  Si al iterar no encuentra guiones bajos la funcion terminara.
+  La funcion muestra las letra erroneas
+
+  Solo permite ingresar una letra a la vez para comparar
   
+  Si ingresas una letra que no esta en la frase se contara como 
+  un error
+
   Si el parametro a adivinar es una frase, el "espacio" no se
   considerara como un guion.
 
-  Solo permite ingresar una letra a la vez para comparar
+  La funcion termina si al iterar no encuentra guiones bajos, entonces
+  ganas el juego, si cometes 6 intentos tambien acaba la funcion y pierdes el juego
   """
   adivinar = adivinar.upper() 
-  errores = 0 
-  palabra = "" 
+  intentos = 0
+  errores = [] 
+  letras_ingresadas = "" 
   while True:
-      if errores < 6 :
-          guiones = 0 
-          for letra in adivinar:
-              if letra in palabra: 
-                  print(letra,end=" ")
-              elif letra == " ":
-                  print("  ",end=" ") 
-              else:
-                  print("_",end=" ")
-                  guiones +=1
-          if guiones == 0: 
-              print("") 
-              print("Felicidades, ganaste")
-              break
+      if intentos < 6 :
+        guiones = 0
+        print(f"errores: ", end=" ")
+        for error in errores:
+           print(f"[ {error} ]",end=" ")
+
+        print("")
+        for letra in adivinar:
+            if letra in letras_ingresadas: 
+                print(letra,end=" ")
+            elif letra == " ":
+                print("  ",end=" ") 
+            else:
+                print("_",end=" ")
+                guiones +=1        
+
+        if guiones == 0: 
+          limpiar_consola()
           print("")
-          tu_letra = input("Introduce tu letra: ").upper() 
+          print("GANASTE!!!!")
+          print("Completaste la frase, felicidades")
+          break
+        
+        print("")
+        tu_letra = input("Introduce tu letra: ").upper()   
+
+        if letra_repetida(tu_letra, letras_ingresadas) == True:
+
           if len(tu_letra) >1:
             limpiar_consola()
-            print("Solo una letra a la vez por favor")          
+            print("Solo una letra a la vez por favor")
+            print("")
+          
           elif tu_letra not in adivinar:
+              letras_ingresadas += tu_letra
+              errores.append(tu_letra)
               limpiar_consola()
-              errores += 1          
+              intentos += 1          
+          
           else:
-            limpiar_consola()
-            palabra += tu_letra
+              limpiar_consola()
+              letras_ingresadas += tu_letra
+
+        else:
+          limpiar_consola()      
+          print("Ya ingresaste esa letra, ingresar una diferente")
+
+    
       else:
+          print("Intentos agotados, perdiste el juego")
           break
-  return errores
-
-
-def intentos(intento): 
-  """"
-  Esta funcion permite terminar el juego en solo 6 intentos.
-  Para ellos se necesita contar los intentos errados en la variable "errores" en la funcion "jugar".
-  
-  El parámetro sera "intento" que se utiliza para definir el numero de intentos fallidos
-
-  Si el parametro recibe hasta el numero 6, el resultado denotará como "Juego terminado, perdiste"
-  """
-  if intento == 6:
-      print("Juego terminado, perdiste")
 
 
 def select_random(lista):
