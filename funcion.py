@@ -1,6 +1,6 @@
 import os  #Funciones del sistema operativo
 import platform  #Funciones para averiguar cosas sobre la plataforma
-import random #Funciones para valores aleatorios
+
 
 #Aqui van sus funciones no olviden luego yo lo ordeno en el main
 
@@ -33,6 +33,81 @@ def letra_repetida(letra, lista):
           lista_respaldo.append(i)
   return True
 
+def imprimir_ahorcado(errores):
+  """
+  Esta funcion imprime el ahorcado deacuerdo a los errores cometidos con el limite de 6 errores
+  """
+  if errores == 0:
+    print(''' 
+      ___________
+    |   ______  |
+    |   |    |  |
+    |        |  |
+    |        |  |
+    |        |  |
+    |        |  |
+    |___________|''')
+  elif errores == 1:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |       |   |
+    |       |   |
+    |       |   |
+    |___________|''')
+  elif errores == 2:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |   |   |   |
+    |       |   |
+    |       |   |
+    |___________|''')
+  elif errores == 3:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |  /|   |   |
+    |       |   |
+    |       |   |
+    |___________|''')
+  elif errores == 4:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |  /|\  |   |
+    |       |   |
+    |       |   |
+    |___________|''')
+  elif errores == 5:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |  /|\  |   |
+    |  /    |   |
+    |       |   |
+    |___________|''')
+  elif errores == 6:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |  /|\  |   |
+    |  / \  |   |
+    |       |   |
+    |___________|''')
+
 def jugar(adivinar: str): 
   """
   Esta funcion recibe como parametro una lista de caracteres
@@ -62,7 +137,9 @@ def jugar(adivinar: str):
   errores = [] 
   letras_ingresadas = "" 
   while True:
+      
       if intentos < 6 :
+        imprimir_ahorcado(intentos)
         guiones = 0
         print(f"errores: ", end=" ")
         for error in errores:
@@ -112,13 +189,10 @@ def jugar(adivinar: str):
     
       else:
           print("Intentos agotados, perdiste el juego")
+          imprimir_ahorcado(intentos)
           break
 
 
-def select_random(lista):
-  """
-  Esta funcion recibe una lista y devuelve una variable
-  aleatoria de esa lista
-  """
-  return random.choice(lista)
+
+
 

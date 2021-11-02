@@ -9,13 +9,14 @@
 - Función para mostrar el título del juego "El ahorcado" y un menú para que el usuario seleccione la categoría o regrese al menú anterior(mínimo 5 frases o palabras por categoría) [ ]
 ![Screenshot](imagenes/Captura_2.PNG)
 
-- Función para imprimir al muñeco del ahorcado [ ]
+- Función para imprimir al muñeco del ahorcado [✔]
 
 - Función para mostrar un tablero que le permita al usuario ir seleccionando letras y adivinando la frase [✔]
 
 - Función para que "sólo permita ingresar letras"(nada de numeros ni caracteres extraños). [ ]
 - Función para que el juego termine pasados los 6 intentos. [✔]
-
+- Función para mostrar las letras erroneas.[✔]
+- Función para permitir solo una letra a la vez.[✔]
 ### El tablero debe mostrar estas cosas: [ ]
 1. Nombre del juego
 2. La categoria de la frase

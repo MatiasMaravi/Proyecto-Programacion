@@ -17,7 +17,7 @@ Cursos_de_CS = ["Mates discretas", "Calculo", "Programacion"]
 
 #Matias
 
-
+frases_de_disney = [ "hasta el infinito y el mas alla", "hakuna matata"  , "ohana significa familia" , "la belleza esta en el interior" , "tiburoncin uh ah ah" ]
 
 #Christopher
 
@@ -28,7 +28,7 @@ Cursos_de_CS = ["Mates discretas", "Calculo", "Programacion"]
 
 
 #Luis
-
+servicios_de_streaming= [ "netflix","hbo max","amazon prime video","twitch","spotify" ] 
 
 
 #Valeria
