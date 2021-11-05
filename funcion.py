@@ -1,7 +1,8 @@
 import os  #Funciones del sistema operativo
 import platform  #Funciones para averiguar cosas sobre la plataforma
+from random import choice #Funcion para escoger una variable aleatoria de una lista
+import categoria
 
-#Aqui van sus funciones no olviden luego yo lo ordeno en el main
 #cosas por mejorar y agregar:
 #volver al inicio del juego 
 
@@ -33,14 +34,10 @@ def letra_repetida(letra, lista):
           lista_respaldo.append(i)
   return True
 
-
 def validar_especiales(pal):
   '''
   Esta función reconoce palabras mayusculas y minusculas menos carácteres especiales ni numeros.
-
-  1. definimos la función con def para invocarla con validar_especiales,luego definimos los parámetros(pal)
-
-    
+  lo que hace este código es definir los parámetros pal que devuelve False mediante return en caso haya detectado la sentencia if una de las letras que no esten definidas en la variable letra, y si no es el caso retorna True y mediante el bucle for vuelve a repetirse la función.  
   '''
   for letra in pal:
       if letra not in "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz":
@@ -48,7 +45,8 @@ def validar_especiales(pal):
   return True
 
 def Menu_UTEC_GAMES():
-  """ Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario seleccione la categoría o regrese al menú anterior """
+  """ Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario seleccione la categoría o regrese al menú anterior 
+  """
   print(" ***UTEC GAMES***")
   print("Seleccione una categoría")
   print("[1] Juego del ahorcado")
@@ -58,8 +56,6 @@ def Menu_UTEC_GAMES():
   opcion = str(input())
   return opcion
 
-
-
 def Menu_El_Ahorcado():
     """ Esta Función mostrara el título del juego "El ahorcado" y un menú para que el usuario seleccione la categoría o regrese al menú anterior 
     """
@@ -67,7 +63,7 @@ def Menu_El_Ahorcado():
                     "Elige una categoría  \n\n"
 
                     "1. Peliculas Famosas \n" +
-                    "2. videojuegos \n" +
+                    "2. Videojuegos \n" +
                     "3. Frases de Disney \n" +
                     "4. Deportes \n" +
                     "5. Mujeres Historicas \n" +
@@ -75,7 +71,15 @@ def Menu_El_Ahorcado():
                     "Elija una Opcion :D \n")) 
     return opc
 
-
+def error(funcion):
+  """
+  La funcion recibe una funcion que ejecutara nuevamente pero antes
+  te avisara que habias escogido una funcion invalida
+  """
+  limpiar_consola()
+  print("Por favor ingrese una opción valida")
+  print("")
+  funcion()
 
 def imprimir_ahorcado(errores):
   """
@@ -203,11 +207,15 @@ def jugar(adivinar: str):
           limpiar_consola()
           print("")
           print("GANASTE!!!!")
-          print('''
-            O/
-           /|/
-            \ ''')
-          print("Completaste la frase, felicidades")
+          print('''  
+         ___
+        /   \ 
+        \___/
+      \___|     
+          |\__/
+      \__/ \ 
+            \_''')
+          print("Completaste la frase, felicidades!! \n")
           break
         
         print("")
@@ -244,20 +252,98 @@ def jugar(adivinar: str):
           imprimir_ahorcado(intentos)
           break
 
-
 def volver_jugar(adivinar):
-  print('¿Desea volver a la sala principal?')
-  valor = input("SI/NO: ").upper()
-  if valor == "SI":
+  """
+  Esta funcion pregunta al usuario si quisiera volver a la
+  sala principal o desea salir completamente del juego
+  """
+  while True:
+    print('''
+──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+───▄▄██▌█ ¿Desea volver a la
+▄▄▄▌▐██▌█ sala principal?
+███████▌█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+▀(@)▀▀▀▀▀▀▀(@)(@)▀▀▀▀▀▀▀▀▀▀▀▀(@)▀
+
+''')
+    valor = input("(SI/NO) : ").upper()
+    if valor == "SI":
+      limpiar_consola()
+      adivinar()
+      break
+    elif valor == "NO":
+      limpiar_consola()
+      print("Adios")
+      break
+    else:
+      limpiar_consola()
+      print("")
+      print("Por favor solo responda 'Si' o 'NO'")
+      volver_jugar(adivinar)
+
+def opcion1():
+
+  """
+  Esta funcion ejecuta el menu del juego del ahorcado y permite
+  escoger cualquiera de las categorias disponibles.
+  """
+  limpiar_consola()
+  opcion = Menu_El_Ahorcado()
+  if opcion == "1":
     limpiar_consola()
-    adivinar()
-  elif valor == "NO":
+    print("Categoria: Peliculas Famosas")
+    jugar(choice(categoria.peliculas_mas_vistas))
+
+  elif opcion == "2":
     limpiar_consola()
-    print("Adios")
+    print("Categoria: videojuegos")
+    jugar(choice(categoria.videos_juegos))
+
+  elif opcion == "3":
+    limpiar_consola()
+    print("Categoria: Frases de Disney")
+    jugar(choice(categoria.frases_de_disney))
+
+  elif opcion == "4":
+    limpiar_consola()
+    print("Categoria: Deportes")
+    jugar(choice(categoria.deportes))
+
+  elif opcion == "5":
+    limpiar_consola()
+    print("Categoria: Mujeres Historicas")
+    jugar(choice(categoria.mujeres_historicas))
+
+  elif opcion == "6":
+    limpiar_consola()
+    print("Categoria: Refranes")
+    jugar(choice(categoria.refranes))
+
   else:
-    print("Por favor solo responda 'Si' o 'NO'")
+    limpiar_consola()
+    print("Error, ingrese una opcion valida")
+    print("")
+    opcion1()
 
+def opcion2():
+  limpiar_consola()
+  print("Proximamente...")
+  print('''   
+          ╔═══╗   ╔═══╗   ╔═══╗
+          ║╔═╗║   ║╔═╗║   ║╔═╗║
+          ╚╝╔╝║   ╚╝╔╝║   ╚╝╔╝║
+            ║╔╝     ║╔╝     ║╔╝
+            ╔╗      ╔╗      ╔╗
+            ╚╝      ╚╝      ╚╝''')
 
-
+def opcion3():
+  limpiar_consola()
+  print("Adios")
+  print('''
+•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•
+::: (\_(\ ...*...*...*...*...*...*...*...*...*...*...*...*
+*: (=' :') :::::::: VUELVE PRONTO!!! :::::::::::
+•..(,('')('')¤...*...*...*...*...*...*...*...*...*...*...*
+¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸''')
 
 
