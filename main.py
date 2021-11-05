@@ -7,9 +7,9 @@ def main():
     funcion.opcion1()
     funcion.volver_jugar(main)  
   elif Opcion_de_Menu == "2":
-    funcion.opcion2
+    funcion.opcion2()
   elif Opcion_de_Menu == "3":
-    funcion.opcion3
+    funcion.opcion3()
   else:
     funcion.error(main)
     

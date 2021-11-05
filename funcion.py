@@ -52,7 +52,7 @@ def Menu_UTEC_GAMES():
   print("[1] Juego del ahorcado")
   print("[2] Otros juegos")
   print("[3] Salir")
-  print("Ingrese una Opcion : ")
+  print("Ingrese una Opcion : ",end="")
   opcion = str(input())
   return opcion
 
@@ -260,8 +260,8 @@ def volver_jugar(adivinar):
   while True:
     print('''
 ──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
-───▄▄██▌█ ¿Desea volver a la
-▄▄▄▌▐██▌█ sala principal?
+───▄▄██▌█ ¿Desea volver a la   ▌
+▄▄▄▌▐██▌█ sala principal?      ▌ 
 ███████▌█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 ▀(@)▀▀▀▀▀▀▀(@)(@)▀▀▀▀▀▀▀▀▀▀▀▀(@)▀
 
