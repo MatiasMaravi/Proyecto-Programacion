@@ -1,10 +1,10 @@
 import os  #Funciones del sistema operativo
 import platform  #Funciones para averiguar cosas sobre la plataforma
 from random import choice #Funcion para escoger una variable aleatoria de una lista
+from time import sleep #Funcion para la aparicion de la consola en un tiempo determinado
 import categoria
-
+import dibujo
 #cosas por mejorar y agregar:
-#volver al inicio del juego 
 
 def limpiar_consola(): 
   """
@@ -47,20 +47,18 @@ def validar_especiales(pal):
 def Menu_UTEC_GAMES():
   """ Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario seleccione la categoría o regrese al menú anterior 
   """
-  print(" ***UTEC GAMES***")
+  print(" ***UTEC GAMES***\n")
   print("Seleccione una categoría")
   print("[1] Juego del ahorcado")
   print("[2] Otros juegos")
-  print("[3] Salir")
-  print("Ingrese una Opcion : ",end="")
-  opcion = str(input())
+  print("[3] Salir \n")
+  opcion = str(input("Ingrese una Opcion : "))
   return opcion
 
 def Menu_El_Ahorcado():
     """ Esta Función mostrara el título del juego "El ahorcado" y un menú para que el usuario seleccione la categoría o regrese al menú anterior 
     """
-    opc = str(input("*** EL JUEGO DEL AHORCADO *** \n" +
-                    "Elige una categoría  \n\n"
+    opc = str(input("Elige una categoría  \n\n"
 
                     "1. Peliculas Famosas \n" +
                     "2. Videojuegos \n" +
@@ -68,7 +66,7 @@ def Menu_El_Ahorcado():
                     "4. Deportes \n" +
                     "5. Mujeres Historicas \n" +
                     "6. Refranes  \n\n" +
-                    "Elija una Opcion :D \n")) 
+                    "Elija una Opcion :D \n--→  "))
     return opc
 
 def error(funcion):
@@ -156,7 +154,7 @@ def imprimir_ahorcado(errores):
     |       |   |
     |___________|''')
 
-def jugar(adivinar: str): 
+def jugar(adivinar, categoria:str): 
   """
   Esta funcion recibe como parametro una lista de caracteres
   en mayusculas y comenzara a iterar letra por letra
@@ -184,15 +182,18 @@ def jugar(adivinar: str):
   adivinar = adivinar.upper() 
   intentos = 0
   errores = [] 
-  letras_ingresadas = "" 
+  letras_ingresadas = ""
   while True:
       if intentos < 6 :
+        limpiar_consola()
+        print("*** EL JUEGO DEL AHORCADO *** \n")
+        print(f"Categoria: {categoria}")
         imprimir_ahorcado(intentos)
         guiones = 0
-        print(f"errores: ", end=" ")
+        print("")
+        print(f"Errores: ", end=" ")
         for error in errores:
            print(f"[ {error} ]",end=" ")
-
         print("")
         for letra in adivinar:
             if letra in letras_ingresadas: 
@@ -201,85 +202,91 @@ def jugar(adivinar: str):
                 print("  ",end=" ") 
             else:
                 print("_",end=" ")
-                guiones +=1        
+                guiones +=1
+
+        print("\n")
+        print(f"Intentos restantes: {6-intentos}")
 
         if guiones == 0: 
           limpiar_consola()
           print("")
-          print("GANASTE!!!!")
-          print('''  
-         ___
-        /   \ 
-        \___/
-      \___|     
-          |\__/
-      \__/ \ 
-            \_''')
-          print("Completaste la frase, felicidades!! \n")
+          print("GANASTE!!!!", end="")
+          dibujo.salvado()
+          print("Completaste la frase, felicidades!!")
+          sleep(2)
+          limpiar_consola()
           break
         
         print("")
-        tu_letra = input("Introduce tu letra: ").upper()   
+        tu_letra = input("Introduce tu letra: ").upper()
 
         if letra_repetida(tu_letra, letras_ingresadas) == True:
           
           if len(tu_letra) >1:
             limpiar_consola()
-            print("Solo una letra a la vez por favor")
             print("")
+            print("Solo una letra a la vez por favor\n")
+            sleep(1.5)
           
           elif validar_especiales(tu_letra) == False:
             limpiar_consola()
-            print("Por favor solo ingresa letras")
             print("")
+            print("Por favor solo ingresa letras\n")
+            sleep(1.5)
 
           elif tu_letra not in adivinar:
               letras_ingresadas += tu_letra
               errores.append(tu_letra)
               limpiar_consola()
-              intentos += 1          
+              intentos += 1
 
           else:
               limpiar_consola()
               letras_ingresadas += tu_letra
 
         else:
-          limpiar_consola()      
-          print("Ya ingresaste esa letra, ingresar una diferente")
-    
+          limpiar_consola()
+          print("")
+          print("Ya ingresaste esa letra, ingresar una diferente\n")
+          sleep(2)
+
       else:
-          print("Intentos agotados, perdiste el juego")
-          imprimir_ahorcado(intentos)
-          break
+        print("Intentos agotados, perdiste el juego")
+        imprimir_ahorcado(intentos)
+        sleep(2)
+        limpiar_consola()
+        break
 
 def volver_jugar(adivinar):
   """
   Esta funcion pregunta al usuario si quisiera volver a la
   sala principal o desea salir completamente del juego
   """
-  while True:
+  dibujo.volver()
+  valor = input("(SI/NO) : ").upper()
+  if valor == "SI":
+    limpiar_consola()
+    adivinar()
+  if valor == "NO":
+    limpiar_consola()
+    print("Adiós!!")
     print('''
-──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
-───▄▄██▌█ ¿Desea volver a la   ▌
-▄▄▄▌▐██▌█ sala principal?      ▌ 
-███████▌█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
-▀(@)▀▀▀▀▀▀▀(@)(@)▀▀▀▀▀▀▀▀▀▀▀▀(@)▀
-
+    
+  ▄█▀█▄           ██
+▄████████▄     ▄▀█▄▄▄▄
+██▀▼▼▼▼▼     ▄▀ █▄▄   
+█████▄▲▲▲     ▄▄▀   ▀▄
+██████▀▀▀▀   ▀        ▀▀
+        VUELVE PRONTOOOO!
 ''')
-    valor = input("(SI/NO) : ").upper()
-    if valor == "SI":
-      limpiar_consola()
-      adivinar()
-      break
-    elif valor == "NO":
-      limpiar_consola()
-      print("Adios")
-      break
-    else:
-      limpiar_consola()
-      print("")
-      print("Por favor solo responda 'Si' o 'NO'")
-      volver_jugar(adivinar)
+  else:
+    limpiar_consola()
+    print("")
+    print("Por favor solo responda 'Si' o 'NO'\n")
+    
+    sleep(2)
+    limpiar_consola()
+    volver_jugar(adivinar)
 
 def opcion1():
 
@@ -287,63 +294,57 @@ def opcion1():
   Esta funcion ejecuta el menu del juego del ahorcado y permite
   escoger cualquiera de las categorias disponibles.
   """
-  limpiar_consola()
   opcion = Menu_El_Ahorcado()
   if opcion == "1":
     limpiar_consola()
-    print("Categoria: Peliculas Famosas")
-    jugar(choice(categoria.peliculas_mas_vistas))
+
+    jugar(choice(categoria.peliculas_mas_vistas),"Peliculas Famosas")
 
   elif opcion == "2":
     limpiar_consola()
-    print("Categoria: videojuegos")
-    jugar(choice(categoria.videos_juegos))
+
+    jugar(choice(categoria.videos_juegos),"Videojuegos")
 
   elif opcion == "3":
     limpiar_consola()
-    print("Categoria: Frases de Disney")
-    jugar(choice(categoria.frases_de_disney))
+
+    jugar(choice(categoria.frases_de_disney),"Frases de Disney")
 
   elif opcion == "4":
     limpiar_consola()
-    print("Categoria: Deportes")
-    jugar(choice(categoria.deportes))
+
+    jugar(choice(categoria.deportes),"Deportes")
 
   elif opcion == "5":
-    limpiar_consola()
-    print("Categoria: Mujeres Historicas")
-    jugar(choice(categoria.mujeres_historicas))
+
+    jugar(choice(categoria.mujeres_historicas),"Mujeres Historicas")
 
   elif opcion == "6":
     limpiar_consola()
-    print("Categoria: Refranes")
-    jugar(choice(categoria.refranes))
+
+    jugar(choice(categoria.refranes),"Refranes")
 
   else:
     limpiar_consola()
-    print("Error, ingrese una opcion valida")
-    print("")
-    opcion1()
+    error(opcion1)
 
 def opcion2():
   limpiar_consola()
-  print("Proximamente...")
-  print('''   
-          ╔═══╗   ╔═══╗   ╔═══╗
-          ║╔═╗║   ║╔═╗║   ║╔═╗║
-          ╚╝╔╝║   ╚╝╔╝║   ╚╝╔╝║
-            ║╔╝     ║╔╝     ║╔╝
-            ╔╗      ╔╗      ╔╗
-            ╚╝      ╚╝      ╚╝''')
+  print("Proximamente...\n")
+  dibujo.proximamente()
+  sleep(2)
 
 def opcion3():
   limpiar_consola()
-  print("Adios")
+  print("Adiós!!")
   print('''
-•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•
-::: (\_(\ ...*...*...*...*...*...*...*...*...*...*...*...*
-*: (=' :') :::::::: VUELVE PRONTO!!! :::::::::::
-•..(,('')('')¤...*...*...*...*...*...*...*...*...*...*...*
-¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸''')
+
+  ▄█▀█▄           ██
+▄████████▄     ▄▀█▄▄▄▄
+██▀▼▼▼▼▼     ▄▀ █▄▄   
+█████▄▲▲▲     ▄▄▀   ▀▄
+██████▀▀▀▀   ▀        ▀▀
+        VUELVE PRONTOOOO!
+''')
 
 
