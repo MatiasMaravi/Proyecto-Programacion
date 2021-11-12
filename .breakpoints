@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "otro.py": [
+      {
+        "id": "960735da-c784-481f-9fd7-e4184fa1639d",
+        "line": 3,
+        "version": 14,
+        "index": 13
+      }
+    ]
+  }
 }

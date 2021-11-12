@@ -1,6 +1,8 @@
 from time import sleep
+import funcion
 
 def introduccion():
+  funcion.limpiar_consola()
   sleep(0.2)
   print('''  ╔═══╗╔╗                       ╔╗    ╔╗      ╔╗                   ╔╗''')
   sleep(0.1)
@@ -16,7 +18,33 @@ def introduccion():
   sleep(0.1)
   print('''          ╚═╝        ╚══╝''')
   sleep(2)
-    
+  funcion.limpiar_consola()
+
+def a_jugar():
+  figuras = ['''
+   █▀▀▀█        
+   █▄▄▄█                                 
+   █   █                                           ''',
+   '''
+   █▀▀▀█    ▀▀█▀  █  █  
+   █▄▄▄█      █   █  █  
+   █   █    ▄▄█   █▄▄█                             ''',
+   '''
+   █▀▀▀█    ▀▀█▀  █  █  █▀▀▀▀  █▀▀▀█  █▀▀▀█    
+   █▄▄▄█      █   █  █  █  ▄▄  █▄▄▄█  █▄▄▄█    
+   █   █    ▄▄█   █▄▄█  █▄▄▄█  █   █  █  ▀▄        ''',
+   '''
+   █▀▀▀█    ▀▀█▀  █  █  █▀▀▀▀  █▀▀▀█  █▀▀▀█    █  █
+   █▄▄▄█      █   █  █  █  ▄▄  █▄▄▄█  █▄▄▄█    █  █
+   █   █    ▄▄█   █▄▄█  █▄▄▄█  █   █  █  ▀▄    ▄  ▄''']
+
+  for figura in figuras:
+    funcion.limpiar_consola()
+    print(figura)
+    sleep(0.1)
+  sleep(0.5)
+  funcion.limpiar_consola()
+  
 def salvado():
   print('''  
          ___
@@ -96,3 +124,109 @@ def pistola():
 ⠀⢸⣿⣿⣿⣿⣿⣿⣿⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠛⠛⠛⠛⠻⠿⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀''' )
   sleep(2)
+
+def despedida():
+  print('''
+
+  ▄█▀█▄           ██
+▄████████▄     ▄▀█▄▄▄▄
+██▀▼▼▼▼▼     ▄▀ █▄▄   
+█████▄▲▲▲     ▄▄▀   ▀▄
+██████▀▀▀▀   ▀        ▀▀
+        VUELVE PRONTOOOO!
+''')
+
+def error(opcion):
+  if opcion == 1:
+
+    print('''
+        __^__                                      __^__
+       ( ___ )------------------------------------( ___ )
+        | / |                                      | \ |
+        | / |  Por favor ingrese una opción valida | \ |
+        |___|                                      |___|
+       (_____)------------------------------------(_____) ''')
+  
+  elif opcion == 2:
+    print('''                     
+    ╔═══════════════════════════════════════════╗ 
+    ║  Por favor solo responder "si" o "no" :D  ║ 
+    ╚═══════════════════════════════════════════╝ ''')
+
+
+
+
+def imprimir_ahorcado(errores):
+  """
+  Esta funcion imprime el ahorcado deacuerdo a los errores cometidos con el limite de 6 errores
+  """
+  if errores == 0:
+    print(''' 
+      ___________
+    |   ______  |
+    |   |    |  |
+    |        |  |
+    |        |  |
+    |        |  |
+    |        |  |
+    |___________|''')
+  elif errores == 1:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |       |   |
+    |       |   |
+    |       |   |
+    |___________|''')
+  elif errores == 2:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |   |   |   |
+    |       |   |
+    |       |   |
+    |___________|''')
+  elif errores == 3:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |  /|   |   |
+    |       |   |
+    |       |   |
+    |___________|''')
+  elif errores == 4:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |  /|\  |   |
+    |       |   |
+    |       |   |
+    |___________|''')
+  elif errores == 5:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |  /|\  |   |
+    |  /    |   |
+    |       |   |
+    |___________|''')
+  elif errores == 6:
+    print('''
+      ___________
+    |   _____   |
+    |   |   |   |
+    |   O   |   |
+    |  /|\  |   |
+    |  / \  |   |
+    |       |   |
+    |___________|''')

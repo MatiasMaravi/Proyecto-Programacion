@@ -1,7 +1,7 @@
 import os  #Funciones del sistema operativo
 import platform  #Funciones para averiguar cosas sobre la plataforma
 from random import choice #Funcion para escoger una variable aleatoria de una lista
-from time import sleep #Funcion para la aparicion de la consola en un tiempo determinado
+from time import sleep #Funcion de aparicion del hilo de consola en un tiempo determinado
 import categoria
 import dibujo
 #cosas por mejorar y agregar:
@@ -36,27 +36,28 @@ def letra_repetida(letra, lista):
 
 def validar_especiales(pal):
   '''
-  Esta función reconoce palabras mayusculas y minusculas menos carácteres especiales ni numeros.
-  lo que hace este código es definir los parámetros pal que devuelve False mediante return en caso haya detectado la sentencia if una de las letras que no esten definidas en la variable letra, y si no es el caso retorna True y mediante el bucle for vuelve a repetirse la función.  
+  Esta función reconoce si el valor ingresado es una letra. Caso contrario retornara False.  
   '''
   for letra in pal:
-      if letra not in "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz":
+      if letra not in "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ":
           return False
   return True
 
 def Menu_UTEC_GAMES():
-  """ Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario seleccione la categoría o regrese al menú anterior 
+  """ 
+  Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario seleccione la categoría o regrese al menú anterior. Retorna la opcion ingresada.
   """
   print(" ***UTEC GAMES***\n")
   print("Seleccione una categoría")
-  print("[1] Juego del ahorcado")
-  print("[2] Otros juegos")
-  print("[3] Salir \n")
+  print("1. Juego del ahorcado")
+  print("2. Otros juegos")
+  print("3. Salir \n")
   opcion = str(input("Ingrese una Opcion : "))
   return opcion
 
 def Menu_El_Ahorcado():
-    """ Esta Función mostrara el título del juego "El ahorcado" y un menú para que el usuario seleccione la categoría o regrese al menú anterior 
+    """
+    Esta Función mostrara el título del juego "El ahorcado" y un menú para que el usuario seleccione la categoría o regrese al menú anterior 
     """
     opc = str(input("Elige una categoría  \n\n"
 
@@ -71,90 +72,19 @@ def Menu_El_Ahorcado():
 
 def error(funcion):
   """
-  La funcion recibe una funcion que ejecutara nuevamente pero antes
-  te avisara que habias escogido una funcion invalida
+  La funcion recibe otra funcion que ejecutara nuevamente pero antes
+  te avisara que habias cometido un error.
   """
   limpiar_consola()
-  print("Por favor ingrese una opción valida")
+  dibujo.error(1)
   print("")
+  sleep(2)
+  limpiar_consola()
   funcion()
 
-def imprimir_ahorcado(errores):
-  """
-  Esta funcion imprime el ahorcado deacuerdo a los errores cometidos con el limite de 6 errores
-  """
-  if errores == 0:
-    print(''' 
-      ___________
-    |   ______  |
-    |   |    |  |
-    |        |  |
-    |        |  |
-    |        |  |
-    |        |  |
-    |___________|''')
-  elif errores == 1:
-    print('''
-      ___________
-    |   _____   |
-    |   |   |   |
-    |   O   |   |
-    |       |   |
-    |       |   |
-    |       |   |
-    |___________|''')
-  elif errores == 2:
-    print('''
-      ___________
-    |   _____   |
-    |   |   |   |
-    |   O   |   |
-    |   |   |   |
-    |       |   |
-    |       |   |
-    |___________|''')
-  elif errores == 3:
-    print('''
-      ___________
-    |   _____   |
-    |   |   |   |
-    |   O   |   |
-    |  /|   |   |
-    |       |   |
-    |       |   |
-    |___________|''')
-  elif errores == 4:
-    print('''
-      ___________
-    |   _____   |
-    |   |   |   |
-    |   O   |   |
-    |  /|\  |   |
-    |       |   |
-    |       |   |
-    |___________|''')
-  elif errores == 5:
-    print('''
-      ___________
-    |   _____   |
-    |   |   |   |
-    |   O   |   |
-    |  /|\  |   |
-    |  /    |   |
-    |       |   |
-    |___________|''')
-  elif errores == 6:
-    print('''
-      ___________
-    |   _____   |
-    |   |   |   |
-    |   O   |   |
-    |  /|\  |   |
-    |  / \  |   |
-    |       |   |
-    |___________|''')
 
-def jugar(adivinar, categoria:str): 
+
+def jugar(adivinar, categoria): 
   """
   Esta funcion recibe como parametro una lista de caracteres
   en mayusculas y comenzara a iterar letra por letra
@@ -162,8 +92,8 @@ def jugar(adivinar, categoria:str):
   Si no encuentra letras coincidentes imprimira un guion bajo en su lugar.
   
   Parámetros:
-    adivinar -- letras_ingresadas o frase que se utilizara para iterar(Solo
-    pueden ser letras_ingresadas) 
+    adivinar -- palabra o frase que se utilizara para iterar.
+    categoria -- Categoria a la que pertenece la palabra o frase a adivinar.
 
   La funcion muestra las letras erroneas
 
@@ -176,9 +106,8 @@ def jugar(adivinar, categoria:str):
   considerara como un guion.
 
   La funcion termina si al iterar no encuentra guiones bajos, entonces
-  ganas el juego, si cometes 6 intentos tambien acaba la funcion y pierdes el juego
+  ganas el juego, si pierdes tus 6 intentos tambien acaba la funcion y pierdes el juego
   """
-
   adivinar = adivinar.upper() 
   intentos = 0
   errores = [] 
@@ -188,10 +117,13 @@ def jugar(adivinar, categoria:str):
         limpiar_consola()
         print("*** EL JUEGO DEL AHORCADO *** \n")
         print(f"Categoria: {categoria}")
-        imprimir_ahorcado(intentos)
+        dibujo.imprimir_ahorcado(intentos)
         guiones = 0
         print("")
         print(f"Errores: ", end=" ")
+
+        print("")
+        print(f"Te quedan {6-intentos} intentos")
         for error in errores:
            print(f"[ {error} ]",end=" ")
         print("")
@@ -204,9 +136,7 @@ def jugar(adivinar, categoria:str):
                 print("_",end=" ")
                 guiones +=1
 
-        print("\n")
-        print(f"Intentos restantes: {6-intentos}")
-
+        print("")
         if guiones == 0: 
           limpiar_consola()
           print("")
@@ -252,7 +182,7 @@ def jugar(adivinar, categoria:str):
 
       else:
         print("Intentos agotados, perdiste el juego")
-        imprimir_ahorcado(intentos)
+        dibujo.imprimir_ahorcado(intentos)
         sleep(2)
         limpiar_consola()
         break
@@ -266,24 +196,16 @@ def volver_jugar(adivinar):
   valor = input("(SI/NO) : ").upper()
   if valor == "SI":
     limpiar_consola()
-    adivinar()
+    return adivinar()
   if valor == "NO":
     limpiar_consola()
     print("Adiós!!")
-    print('''
-    
-  ▄█▀█▄           ██
-▄████████▄     ▄▀█▄▄▄▄
-██▀▼▼▼▼▼     ▄▀ █▄▄   
-█████▄▲▲▲     ▄▄▀   ▀▄
-██████▀▀▀▀   ▀        ▀▀
-        VUELVE PRONTOOOO!
-''')
+    dibujo.despedida()
+
   else:
     limpiar_consola()
     print("")
-    print("Por favor solo responda 'Si' o 'NO'\n")
-    
+    dibujo.error(2)
     sleep(2)
     limpiar_consola()
     volver_jugar(adivinar)
@@ -294,34 +216,35 @@ def opcion1():
   Esta funcion ejecuta el menu del juego del ahorcado y permite
   escoger cualquiera de las categorias disponibles.
   """
+
   opcion = Menu_El_Ahorcado()
   if opcion == "1":
     limpiar_consola()
-
+    dibujo.a_jugar()
     jugar(choice(categoria.peliculas_mas_vistas),"Peliculas Famosas")
 
   elif opcion == "2":
     limpiar_consola()
-
+    dibujo.a_jugar()
     jugar(choice(categoria.videos_juegos),"Videojuegos")
 
   elif opcion == "3":
     limpiar_consola()
-
+    dibujo.a_jugar()
     jugar(choice(categoria.frases_de_disney),"Frases de Disney")
 
   elif opcion == "4":
     limpiar_consola()
-
+    dibujo.a_jugar()
     jugar(choice(categoria.deportes),"Deportes")
 
   elif opcion == "5":
-
+    dibujo.a_jugar()
     jugar(choice(categoria.mujeres_historicas),"Mujeres Historicas")
 
   elif opcion == "6":
     limpiar_consola()
-
+    dibujo.a_jugar()
     jugar(choice(categoria.refranes),"Refranes")
 
   else:
@@ -333,18 +256,10 @@ def opcion2():
   print("Proximamente...\n")
   dibujo.proximamente()
   sleep(2)
+  limpiar_consola()
 
 def opcion3():
   limpiar_consola()
   print("Adiós!!")
-  print('''
-
-  ▄█▀█▄           ██
-▄████████▄     ▄▀█▄▄▄▄
-██▀▼▼▼▼▼     ▄▀ █▄▄   
-█████▄▲▲▲     ▄▄▀   ▀▄
-██████▀▀▀▀   ▀        ▀▀
-        VUELVE PRONTOOOO!
-''')
-
-
+  dibujo.despedida()
+  
