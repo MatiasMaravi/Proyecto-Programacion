@@ -2,6 +2,7 @@ import funcion
 import dibujo
 
 def main():
+  funcion.limpiar_consola()
   Opcion_de_Menu = funcion.Menu_UTEC_GAMES()
   if Opcion_de_Menu == "1":
     dibujo.introduccion()
@@ -14,18 +15,8 @@ def main():
     funcion.opcion3()
   else:
     funcion.error(main)
+  funcion.consejos()
 
 main()
 
-
 #cabe recalcar que falta creatividad xd
-  
-
-
-
-
-
-
-
-
-

@@ -82,8 +82,6 @@ def error(funcion):
   limpiar_consola()
   funcion()
 
-
-
 def jugar(adivinar, categoria): 
   """
   Esta funcion recibe como parametro una lista de caracteres
@@ -120,13 +118,15 @@ def jugar(adivinar, categoria):
         dibujo.imprimir_ahorcado(intentos)
         guiones = 0
         print("")
-        print(f"Errores: ", end=" ")
 
-        print("")
-        print(f"Te quedan {6-intentos} intentos")
+        if intentos == 5:
+          print(f"CUIDADO!!! solo te queda {6-intentos} intento\n")
+        else:
+          print(f"Te quedan {6-intentos} intentos\n")
+        print(f"Errores: ", end=" ")
         for error in errores:
            print(f"[ {error} ]",end=" ")
-        print("")
+        print("\n")
         for letra in adivinar:
             if letra in letras_ingresadas: 
                 print(letra,end=" ")
@@ -155,7 +155,7 @@ def jugar(adivinar, categoria):
           if len(tu_letra) >1:
             limpiar_consola()
             print("")
-            print("Solo una letra a la vez por favor\n")
+            dibujo.pistola()
             sleep(1.5)
           
           elif validar_especiales(tu_letra) == False:
@@ -187,7 +187,7 @@ def jugar(adivinar, categoria):
         limpiar_consola()
         break
 
-def volver_jugar(adivinar):
+def volver_jugar(funcion):
   """
   Esta funcion pregunta al usuario si quisiera volver a la
   sala principal o desea salir completamente del juego
@@ -196,7 +196,7 @@ def volver_jugar(adivinar):
   valor = input("(SI/NO) : ").upper()
   if valor == "SI":
     limpiar_consola()
-    return adivinar()
+    return funcion()
   if valor == "NO":
     limpiar_consola()
     print("Adiós!!")
@@ -208,10 +208,9 @@ def volver_jugar(adivinar):
     dibujo.error(2)
     sleep(2)
     limpiar_consola()
-    volver_jugar(adivinar)
+    volver_jugar(funcion)
 
 def opcion1():
-
   """
   Esta funcion ejecuta el menu del juego del ahorcado y permite
   escoger cualquiera de las categorias disponibles.
@@ -263,3 +262,7 @@ def opcion3():
   print("Adiós!!")
   dibujo.despedida()
   
+def consejos():
+  print("Consejo para tu vida:\n")
+  print(choice(categoria.consejos))
+  print("\n")
