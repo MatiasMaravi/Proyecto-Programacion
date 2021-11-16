@@ -150,35 +150,33 @@ def jugar(adivinar, categoria):
         print("")
         tu_letra = input("Introduce tu letra: ").upper()
 
-        if letra_repetida(tu_letra, letras_ingresadas) == True:
-          
-          if len(tu_letra) >1:
-            limpiar_consola()
-            print("")
-            dibujo.pistola()
-            sleep(1.5)
-          
-          elif validar_especiales(tu_letra) == False:
-            limpiar_consola()
-            print("")
-            print("Por favor solo ingresa letras\n")
-            sleep(1.5)
-
-          elif tu_letra not in adivinar:
-              letras_ingresadas += tu_letra
-              errores.append(tu_letra)
-              limpiar_consola()
-              intentos += 1
-
-          else:
-              limpiar_consola()
-              letras_ingresadas += tu_letra
-
-        else:
+        if letra_repetida(tu_letra, letras_ingresadas) == False:
           limpiar_consola()
           print("")
           print("Ya ingresaste esa letra, ingresar una diferente\n")
           sleep(2)
+          
+        elif len(tu_letra) >1:
+          limpiar_consola()
+          print("")
+          dibujo.pistola()
+          sleep(1.5)
+        
+        elif validar_especiales(tu_letra) == False:
+          limpiar_consola()
+          print("")
+          print("Por favor solo ingresa letras\n")
+          sleep(1.5)
+
+        elif tu_letra not in adivinar:
+            letras_ingresadas += tu_letra
+            errores.append(tu_letra)
+            limpiar_consola()
+            intentos += 1
+
+        else:
+            limpiar_consola()
+            letras_ingresadas += tu_letra
 
       else:
         print("Intentos agotados, perdiste el juego")
@@ -197,7 +195,7 @@ def volver_jugar(funcion):
   if valor == "SI":
     limpiar_consola()
     return funcion()
-  if valor == "NO":
+  elif valor == "NO":
     limpiar_consola()
     print("Adiós!!")
     dibujo.despedida()
@@ -264,5 +262,5 @@ def opcion3():
   
 def consejos():
   print("Consejo para tu vida:\n")
-  print(choice(categoria.consejos))
+  print(f"✩ {choice(categoria.consejos)} ✩")
   print("\n")

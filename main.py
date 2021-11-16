@@ -15,8 +15,7 @@ def main():
     funcion.opcion3()
   else:
     funcion.error(main)
-  funcion.consejos()
 
 main()
-
+funcion.consejos()
 #cabe recalcar que falta creatividad xd
