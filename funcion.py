@@ -47,7 +47,7 @@ def Menu_UTEC_GAMES():
   """ 
   Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario seleccione la categoría o regrese al menú anterior. Retorna la opcion ingresada.
   """
-  print(" ***UTEC GAMES***\n")
+  dibujo.logo()
   print("Seleccione una categoría")
   print("1. Juego del ahorcado")
   print("2. Otros juegos")
@@ -59,6 +59,8 @@ def Menu_El_Ahorcado():
     """
     Esta Función mostrara el título del juego "El ahorcado" y un menú para que el usuario seleccione la categoría o regrese al menú anterior 
     """
+    limpiar_consola()
+    dibujo.logo()
     opc = str(input("Elige una categoría  \n\n"
 
                     "1. Peliculas Famosas \n" +
@@ -149,23 +151,22 @@ def jugar(adivinar, categoria):
         
         print("")
         tu_letra = input("Introduce tu letra: ").upper()
-
+        if tu_letra == "SALIR":
+          dibujo.muerte()
+          break
         if letra_repetida(tu_letra, letras_ingresadas) == False:
           limpiar_consola()
-          print("")
-          print("Ya ingresaste esa letra, ingresar una diferente\n")
+          dibujo.error(3)
           sleep(2)
           
         elif len(tu_letra) >1:
           limpiar_consola()
-          print("")
-          dibujo.pistola()
+          dibujo.error(4)
           sleep(1.5)
         
         elif validar_especiales(tu_letra) == False:
           limpiar_consola()
-          print("")
-          print("Por favor solo ingresa letras\n")
+          dibujo.error(5)
           sleep(1.5)
 
         elif tu_letra not in adivinar:
@@ -179,6 +180,7 @@ def jugar(adivinar, categoria):
             letras_ingresadas += tu_letra
 
       else:
+        dibujo.ahorcado()
         print("Intentos agotados, perdiste el juego")
         dibujo.imprimir_ahorcado(intentos)
         sleep(2)

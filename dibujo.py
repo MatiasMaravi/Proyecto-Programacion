@@ -1,52 +1,80 @@
 from time import sleep
 import funcion
 
+
+def logo():
+    print("""
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  
+█  ▄  ▄ ▄▄▄ ▄▄▄ ▄▄▄   ▄▄▄  ▄▄▄ ▄▄ ▄▄ ▄▄▄ ▄▄▄  █ 
+█  █  █  █  █▄▄ █     █ ▄▄ █▄█ █ █ █ █▄▄ █▄▄  █
+█  █▄▄█  █  █▄▄ █▄▄   █▄▄█ █ █ █   █ █▄▄ ▄▄█  █
+ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+                          """)
+
+
+def ahorcado():
+    funcion.limpiar_consola()
+    print('''
+▀ ▀ ▀   █▀▀█ █  █ █▀▀█ █▀▀▄ █▀▀ █▀▀█ █▀▀▄ █▀▀█   █ █ █
+█ █ █   █▄▄█ █▄▄█ █  █ █▄▄▀ █   █▄▄█ █  █ █  █   █ █ █
+█ █ █   █  █ █  █ █▄▄█ █ ▀▄ █▄▄ █  █ █▄▄▀ █▄▄█   ▄ ▄ ▄
+               ''')
+    sleep(0.75)
+
+
 def introduccion():
-  funcion.limpiar_consola()
-  sleep(0.2)
-  print('''  ╔═══╗╔╗                       ╔╗    ╔╗      ╔╗                   ╔╗''')
-  sleep(0.1)
-  print('''  ║╔══╝║║  ╔╗                   ║║    ║║      ║║                   ║║''')
-  sleep(0.1)
-  print('''  ║╚══╗║║  ╚╝╔╗╔╗╔══╗╔══╗╔══╗ ╔═╝║╔══╗║║  ╔══╗║╚═╗╔══╗╔═╗╔══╗╔══╗╔═╝║╔══╗''')
-  sleep(0.1)
-  print('''  ║╔══╝║║  ╔╗║║║║║║═╣║╔╗║║╔╗║ ║╔╗║║║═╣║║  ║╔╗║║╔╗║║╔╗║║╔╝║╔═╝║╔╗║║╔╗║║╔╗║''')
-  sleep(0.1)
-  print('''  ║╚══╗║╚╗ ║║║╚╝║║║═╣║╚╝║║╚╝║ ║╚╝║║║═╣║╚╗ ║╔╗║║║║║║╚╝║║║ ║╚═╗║╔╗║║╚╝║║╚╝║''')
-  sleep(0.1)
-  print('''  ╚═══╝╚═╝ ║║╚══╝╚══╝╚═╗║╚══╝ ╚══╝╚══╝╚═╝ ╚╝╚╝╚╝╚╝╚══╝╚╝ ╚══╝╚╝╚╝╚══╝╚══╝''')
-  sleep(0.1)
-  print('''          ╚═╝        ╚══╝''')
-  sleep(1)
-  funcion.limpiar_consola()
+    figuras = [
+        '''        
+   █▀▀ █
+   █▀▀ █
+   ▀▀▀ ▀▀▀
+   ''', '''   
+   █▀▀ █    ▀▀█▀ █  █ █▀▀ █▀▀  █▀▀█
+   █▀▀ █      █  █  █ █▀▀ █ ▀█ █  █
+   ▀▀▀ ▀▀▀  ▀▀▀  ▀▀▀▀ ▀▀▀ ▀▀▀▀ ▀▀▀▀
+                  ''', ''' 
+   █▀▀ █    ▀▀█▀ █  █ █▀▀ █▀▀  █▀▀█   █▀▀▄ █▀▀ █
+   █▀▀ █      █  █  █ █▀▀ █ ▀█ █  █   █  █ █▀▀ █
+   ▀▀▀ ▀▀▀  ▀▀▀  ▀▀▀▀ ▀▀▀ ▀▀▀▀ ▀▀▀▀   ▀▀▀  ▀▀▀ ▀▀▀  '''
+    ]
+
+    for figura in figuras:
+        funcion.limpiar_consola()
+        print(figura)
+        sleep(0.1)
+    sleep(0.7)
+    funcion.limpiar_consola()
+
+    ahorcado()
+
 
 def a_jugar():
-  figuras = ['''
+    figuras = [
+        '''
    █▀▀▀█        
    █▄▄▄█                                 
-   █   █                                           ''',
-   '''
+   █   █                                           ''', '''
    █▀▀▀█    ▀▀█▀  █  █  
    █▄▄▄█      █   █  █  
-   █   █    ▄▄█   █▄▄█                             ''',
-   '''
+   █   █    ▄▄█   █▄▄█                             ''', '''
    █▀▀▀█    ▀▀█▀  █  █  █▀▀▀▀  █▀▀▀█  █▀▀▀█    
    █▄▄▄█      █   █  █  █  ▄▄  █▄▄▄█  █▄▄▄█    
-   █   █    ▄▄█   █▄▄█  █▄▄▄█  █   █  █  ▀▄        ''',
-   '''
+   █   █    ▄▄█   █▄▄█  █▄▄▄█  █   █  █  ▀▄        ''', '''
    █▀▀▀█    ▀▀█▀  █  █  █▀▀▀▀  █▀▀▀█  █▀▀▀█    █  █
    █▄▄▄█      █   █  █  █  ▄▄  █▄▄▄█  █▄▄▄█    █  █
-   █   █    ▄▄█   █▄▄█  █▄▄▄█  █   █  █  ▀▄    ▄  ▄''']
+   █   █    ▄▄█   █▄▄█  █▄▄▄█  █   █  █  ▀▄    ▄  ▄'''
+    ]
 
-  for figura in figuras:
+    for figura in figuras:
+        funcion.limpiar_consola()
+        print(figura)
+        sleep(0.1)
+    sleep(0.5)
     funcion.limpiar_consola()
-    print(figura)
-    sleep(0.1)
-  sleep(0.5)
-  funcion.limpiar_consola()
-  
+
+
 def salvado():
-  print('''  
+    print('''  
      ▄▄▄▄▄▄▄▄▄▄▄▄
     █ UTEC      █
     █   ______  █     
@@ -58,8 +86,9 @@ def salvado():
     █▄▄▄▄▄▄▄▄▄▄▄█
             ''')
 
+
 def volver():
-  print('''
+    print('''
 ──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
 ───▄▄██▌█ ¿Desea volver a la   ▌
 ▄▄▄▌▐██▌█ sala principal?      ▌ 
@@ -70,7 +99,8 @@ def volver():
 
 
 def muerte():
-  print('''  
+    funcion.limpiar_consola()
+    print('''  
 ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
 ⣿⣿⣿⣿⡿⠃⠄⠄⠄⢀⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠈⢿
@@ -83,39 +113,42 @@ def muerte():
 ⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠈⣿⣿⣿⡟⠁⠄⠄⠄⠄⣿⣿
 ⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢀⣿⣿⡟⠄⠄⠄⠄⠄⢠⣿⣿
 ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
-⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄HAPPY ⠙⢿⣿
-⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄HALLOWEEN ⠙ '''  )
+⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
+⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄COBARDE!!! ⠙ ''')
+    sleep(1)
+    funcion.limpiar_consola()
 
 
 def proximamente():
-  sleep(0.1)
-  print('''     ╔═══╗''', end="")
-  print('''    ╔═══╗''', end="")
-  print('''    ╔═══╗''')
-  sleep(0.1)
-  print('''     ║╔═╗║''', end="")
-  print('''    ║╔═╗║''', end="")
-  print('''    ║╔═╗║''')
-  sleep(0.1)
-  print('''     ╚╝╔╝║''', end="")
-  print('''    ╚╝╔╝║''', end="")
-  print('''    ╚╝╔╝║''')
-  sleep(0.1)
-  print('''       ║╔╝''', end="")
-  print('''      ║╔╝''', end="")
-  print('''      ║╔╝''')
-  sleep(0.1)
-  print('''       ╔╗ ''', end="")
-  print('''      ╔╗ ''', end="")
-  print('''      ╔╗ ''')
-  sleep(0.1)
-  print('''       ╚╝ ''', end="")
-  print('''      ╚╝ ''', end="")
-  print('''      ╚╝ ''')
+    sleep(0.1)
+    print('''     ╔═══╗''', end="")
+    print('''    ╔═══╗''', end="")
+    print('''    ╔═══╗''')
+    sleep(0.1)
+    print('''     ║╔═╗║''', end="")
+    print('''    ║╔═╗║''', end="")
+    print('''    ║╔═╗║''')
+    sleep(0.1)
+    print('''     ╚╝╔╝║''', end="")
+    print('''    ╚╝╔╝║''', end="")
+    print('''    ╚╝╔╝║''')
+    sleep(0.1)
+    print('''       ║╔╝''', end="")
+    print('''      ║╔╝''', end="")
+    print('''      ║╔╝''')
+    sleep(0.1)
+    print('''       ╔╗ ''', end="")
+    print('''      ╔╗ ''', end="")
+    print('''      ╔╗ ''')
+    sleep(0.1)
+    print('''       ╚╝ ''', end="")
+    print('''      ╚╝ ''', end="")
+    print('''      ╚╝ ''')
+
 
 def pistola():
-  print(''' ⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣤⣤
-⠀⠀⢶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿     Solo una letra a la vez por favor
+    print(''' ⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣤⣤
+⠀⠀⢶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿  
 ⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⠠⠾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⠛⠛⠛⠋⠉⠀
 ⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⠏⢠⣿⡀⠀⠀⢹⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -124,11 +157,23 @@ def pistola():
 ⠀⢠⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⢸⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⢸⣿⣿⣿⣿⣿⣿⣿⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠛⠛⠛⠛⠻⠿⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀''' )
-  sleep(2)
+⠀⠀⠛⠛⠛⠛⠻⠿⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀''')
+    sleep(2)
+
+
+def flecha():
+    print('''
+                           ▄█▄
+                         ▄█████▄
+                       ▄█████████▄
+                           ███
+                           ███
+██████████████████████████████                 
+  ''')
+
 
 def despedida():
-  print('''
+    print('''
 
   ▄█▀█▄           ██
 ▄████████▄     ▄▀█▄▄▄▄
@@ -138,32 +183,57 @@ def despedida():
         VUELVE PRONTOOOO!
 ''')
 
-def error(opcion):
-  if opcion == 1:
 
+def error(opcion):
+  """
+  La funcion recibe como parametro la opcion a pintar en pantalla.
+  las opciones disponibles son:
+  1. "Ingresar opcion valida"
+  2. "Solo responder 'si' o 'no'
+  3. "No repetir letras"
+  4. "Solo ingresa una letra a la vez"
+  5. "Solo ingresa letras del abecedario"
+  """
+  if opcion == 1:
     print('''
-        __^__                                      __^__
-       ( ___ )------------------------------------( ___ )
-        | / |                                      | \ |
-        | / |  Por favor ingrese una opción valida | \ |
-        |___|                                      |___|
-       (_____)------------------------------------(_____) ''')
-  
+       __^__                                      __^__
+      ( ___ )------------------------------------( ___ )
+       | / |                                      | \ |
+       | / |  Por favor ingrese una opción valida | \ |
+       |___|                                      |___|
+      (_____)------------------------------------(_____) ''')
+
   elif opcion == 2:
     print('''                     
     ╔═══════════════════════════════════════════╗ 
     ║  Por favor solo responder "si" o "no" :D  ║ 
     ╚═══════════════════════════════════════════╝ ''')
-
-
+  elif opcion == 3:
+    print('''
+  ╔═══════════════════════════════════════════════════════════╗ 
+  ║ Ya ingresaste esa LETRA, ingresa una DIFERENTE ¯\_(ツ)_/¯ ║ 
+  ╚═══════════════════════════════════════════════════════════╝
+  ''')
+  elif opcion == 4:
+    print('''
+  ╔══════════════════════════════════════════════╗ 
+  ║ Solo UNA letra a la vez por favor ¯\_(ツ)_/¯ ║ 
+  ╚══════════════════════════════════════════════╝
+  ''')
+  elif opcion == 5:
+    print('''
+  ╔══════════════════════════════════════════╗ 
+  ║ Por favor solo ingresa LETRAS ¯\_(ツ)_/¯ ║ 
+  ╚══════════════════════════════════════════╝
+  ''')
 
 
 def imprimir_ahorcado(errores):
-  """
+    """
   Esta funcion imprime el ahorcado deacuerdo a los errores cometidos con el limite de 6 errores
   """
-  if errores == 0:
-    print(''' 
+    if errores == 0:
+        print(''' 
      ▄▄▄▄▄▄▄▄▄▄▄▄
     █ UTEC      █
     █   ______  █
@@ -173,30 +243,30 @@ def imprimir_ahorcado(errores):
     █        |  █
     █        |  █
     █▄▄▄▄▄▄▄▄▄▄▄█''')
-  elif errores == 1:
-    print('''
-     ▄▄▄▄▄▄▄▄▄▄▄▄
-    █ UTEC      █
-    █   ______  █
-    █   |    |  █
-    █   O    |  █
-    █        |  █
-    █        |  █
-    █        |  █
-    █▄▄▄▄▄▄▄▄▄▄▄█''')
-  elif errores == 2:
-    print('''
+    elif errores == 1:
+        print('''
      ▄▄▄▄▄▄▄▄▄▄▄▄
     █ UTEC      █
     █   ______  █
     █   |    |  █
     █   O    |  █
+    █        |  █
+    █        |  █
+    █        |  █
+    █▄▄▄▄▄▄▄▄▄▄▄█''')
+    elif errores == 2:
+        print('''
+     ▄▄▄▄▄▄▄▄▄▄▄▄
+    █ UTEC      █
+    █   ______  █
+    █   |    |  █
+    █   O    |  █
     █   |    |  █
     █        |  █
     █        |  █
     █▄▄▄▄▄▄▄▄▄▄▄█''')
-  elif errores == 3:
-    print('''
+    elif errores == 3:
+        print('''
      ▄▄▄▄▄▄▄▄▄▄▄▄
     █ UTEC      █
     █   ______  █
@@ -206,8 +276,8 @@ def imprimir_ahorcado(errores):
     █        |  █
     █        |  █
     █▄▄▄▄▄▄▄▄▄▄▄█''')
-  elif errores == 4:
-    print('''
+    elif errores == 4:
+        print('''
      ▄▄▄▄▄▄▄▄▄▄▄▄
     █ UTEC      █
     █   ______  █
@@ -217,8 +287,8 @@ def imprimir_ahorcado(errores):
     █        |  █
     █        |  █
     █▄▄▄▄▄▄▄▄▄▄▄█''')
-  elif errores == 5:
-    print('''
+    elif errores == 5:
+        print('''
      ▄▄▄▄▄▄▄▄▄▄▄▄
     █ UTEC      █
     █   ______  █
@@ -228,8 +298,8 @@ def imprimir_ahorcado(errores):
     █  /     |  █
     █        |  █
     █▄▄▄▄▄▄▄▄▄▄▄█''')
-  elif errores == 6:
-    print('''
+    elif errores == 6:
+        print('''
      ▄▄▄▄▄▄▄▄▄▄▄▄
     █ UTEC      █
     █   ______  █
