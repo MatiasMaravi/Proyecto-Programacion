@@ -47,5 +47,6 @@ consejos = [
     "Si algo se ve facil es mejor dudar enseguida",
     "Nunca comas chicharrón en cualquier lado",
     "Cada día no puede ser bueno, pero siempre hay algo bueno en cada día",
-    "No olvides que nos hace daño quien nos quiere y no quien quiere hacernos daño"
+    "No olvides que nos hace daño quien nos quiere y no quien quiere hacernos daño",
+    "Trabaja en lo que más te guste y nunca más tendras que trabajar"
 ]

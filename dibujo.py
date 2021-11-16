@@ -1,9 +1,10 @@
 from time import sleep
 import funcion
-
-
 def logo():
-    print("""
+  """
+  Dibuja el logo de "UTEC GAMES" en pantalla.
+  """
+  print("""
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  
 █  ▄  ▄ ▄▄▄ ▄▄▄ ▄▄▄   ▄▄▄  ▄▄▄ ▄▄ ▄▄ ▄▄▄ ▄▄▄  █ 
 █  █  █  █  █▄▄ █     █ ▄▄ █▄█ █ █ █ █▄▄ █▄▄  █
@@ -11,19 +12,25 @@ def logo():
  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
                           """)
 
-
 def ahorcado():
-    funcion.limpiar_consola()
-    print('''
+  """
+  Trabaja con la función "sleep" del módulo "time".
+  Borra la consola e imprime la palabra "Ahorcado" por unos breves segundos.
+  """
+  funcion.limpiar_consola()
+  print('''
 ▀ ▀ ▀   █▀▀█ █  █ █▀▀█ █▀▀▄ █▀▀ █▀▀█ █▀▀▄ █▀▀█   █ █ █
 █ █ █   █▄▄█ █▄▄█ █  █ █▄▄▀ █   █▄▄█ █  █ █  █   █ █ █
 █ █ █   █  █ █  █ █▄▄█ █ ▀▄ █▄▄ █  █ █▄▄▀ █▄▄█   ▄ ▄ ▄
                ''')
-    sleep(0.75)
-
+  sleep(0.75)
 
 def introduccion():
-    figuras = [
+  """
+  Trabaja con la función "sleep" del módulo "time".
+  Dibuja en pantalla una animación de la palabra "El juego de".
+  """
+  figuras = [
         '''        
    █▀▀ █
    █▀▀ █
@@ -38,19 +45,21 @@ def introduccion():
    ▀▀▀ ▀▀▀  ▀▀▀  ▀▀▀▀ ▀▀▀ ▀▀▀▀ ▀▀▀▀   ▀▀▀  ▀▀▀ ▀▀▀  '''
     ]
 
-    for figura in figuras:
-        funcion.limpiar_consola()
-        print(figura)
-        sleep(0.1)
-    sleep(0.7)
+  for figura in figuras:
     funcion.limpiar_consola()
-
-    ahorcado()
-
+    print(figura)
+    sleep(0.1)
+  sleep(0.7)
+  funcion.limpiar_consola()
+  ahorcado()
 
 def a_jugar():
+    """
+    Trabaja con la función "sleep" del módulo "time".
+    Dibuja en pantalla una animación de la palabra "A jugar".
+    """
     figuras = [
-        '''
+    '''
    █▀▀▀█        
    █▄▄▄█                                 
    █   █                                           ''', '''
@@ -72,8 +81,10 @@ def a_jugar():
     sleep(0.5)
     funcion.limpiar_consola()
 
-
 def salvado():
+    """
+    Dibuja en pantalla el muñeco escapando del juego y celebrando.
+    """
     print('''  
      ▄▄▄▄▄▄▄▄▄▄▄▄
     █ UTEC      █
@@ -86,8 +97,11 @@ def salvado():
     █▄▄▄▄▄▄▄▄▄▄▄█
             ''')
 
-
 def volver():
+    """
+    Dibuja en pantalla un camión que te pregunta si quisieras
+    volver a la sala principal
+    """
     print('''
 ──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
 ───▄▄██▌█ ¿Desea volver a la   ▌
@@ -97,8 +111,11 @@ def volver():
 
 ''')
 
-
 def muerte():
+    """
+    Trabaja con la función "sleep" del módulo "time".
+    Limpia la consola y muestra a la muerte llamandote cobarde por rendirte y escapar del juego.
+    """
     funcion.limpiar_consola()
     print('''  
 ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
@@ -118,8 +135,11 @@ def muerte():
     sleep(1)
     funcion.limpiar_consola()
 
-
 def proximamente():
+    """
+    Trabaja con la función "sleep" del módulo "time".
+    Dibuja en pantalla una animación de "signos de interrogacion".
+    """
     sleep(0.1)
     print('''     ╔═══╗''', end="")
     print('''    ╔═══╗''', end="")
@@ -145,7 +165,6 @@ def proximamente():
     print('''      ╚╝ ''', end="")
     print('''      ╚╝ ''')
 
-
 def pistola():
     print(''' ⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣤⣤
 ⠀⠀⢶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿  
@@ -160,7 +179,6 @@ def pistola():
 ⠀⠀⠛⠛⠛⠛⠻⠿⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀''')
     sleep(2)
 
-
 def flecha():
     print('''
                            ▄█▄
@@ -171,8 +189,10 @@ def flecha():
 ██████████████████████████████                 
   ''')
 
-
 def despedida():
+    """
+    Dibuja en pantalla un muñeco escapando de un cocodrilo despidiendose.
+    """
     print('''
 
   ▄█▀█▄           ██
@@ -182,7 +202,6 @@ def despedida():
 ██████▀▀▀▀   ▀        ▀▀
         VUELVE PRONTOOOO!
 ''')
-
 
 def error(opcion):
   """
@@ -205,9 +224,9 @@ def error(opcion):
 
   elif opcion == 2:
     print('''                     
-    ╔═══════════════════════════════════════════╗ 
-    ║  Por favor solo responder "si" o "no" :D  ║ 
-    ╚═══════════════════════════════════════════╝ ''')
+  ╔═══════════════════════════════════════════╗ 
+  ║  Por favor solo responder "si" o "no" :D  ║ 
+  ╚═══════════════════════════════════════════╝ ''')
   elif opcion == 3:
     print('''
   ╔═══════════════════════════════════════════════════════════╗ 
@@ -227,11 +246,10 @@ def error(opcion):
   ╚══════════════════════════════════════════╝
   ''')
 
-
 def imprimir_ahorcado(errores):
     """
-  Esta funcion imprime el ahorcado deacuerdo a los errores cometidos con el limite de 6 errores
-  """
+    Esta funcion imprime el ahorcado deacuerdo a los errores cometidos con el limite de 6 errores
+    """
     if errores == 0:
         print(''' 
      ▄▄▄▄▄▄▄▄▄▄▄▄

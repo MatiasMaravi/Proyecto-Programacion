@@ -4,10 +4,10 @@ from random import choice #Funcion para escoger una variable aleatoria de una li
 from time import sleep #Funcion de aparicion del hilo de consola en un tiempo determinado
 import categoria
 import dibujo
-#cosas por mejorar y agregar:
 
 def limpiar_consola(): 
   """
+  Trabaja con los módulos "platform" y "os" 
   Esta funcion limpia la consola dependiendo 
   que sistema operativo estes usando
   """
@@ -45,7 +45,10 @@ def validar_especiales(pal):
 
 def Menu_UTEC_GAMES():
   """ 
-  Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario seleccione la categoría o regrese al menú anterior. Retorna la opcion ingresada.
+  Trabaja con el módulo "dibujo".
+  Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario 
+  seleccione la categoría o regrese al menú anterior. 
+  Retorna la opcion ingresada.
   """
   dibujo.logo()
   print("Seleccione una categoría")
@@ -57,7 +60,10 @@ def Menu_UTEC_GAMES():
 
 def Menu_El_Ahorcado():
     """
-    Esta Función mostrara el título del juego "El ahorcado" y un menú para que el usuario seleccione la categoría o regrese al menú anterior 
+    Trabaja con el módulo "dibujo"
+    Esta función limpia la consola y muestra el título del juego "El ahorcado", 
+    además muestra un menú para que el usuario seleccione la categoría o regrese al menú anterior.
+    Retorna la categoria escogida.
     """
     limpiar_consola()
     dibujo.logo()
@@ -74,8 +80,9 @@ def Menu_El_Ahorcado():
 
 def error(funcion):
   """
-  La funcion recibe otra funcion que ejecutara nuevamente pero antes
-  te avisara que habias cometido un error.
+  Trabaja con el módulo "dibujo" y la función "sleep" del módulo "time".
+  La funcion recibe otra funcion que ejecutara nuevamente pero antes limpiara 
+  la consola y te avisara que habias cometido un error por unos segundos.
   """
   limpiar_consola()
   dibujo.error(1)
@@ -86,27 +93,32 @@ def error(funcion):
 
 def jugar(adivinar, categoria): 
   """
-  Esta funcion recibe como parametro una lista de caracteres
-  en mayusculas y comenzara a iterar letra por letra
-  de la palabra a advinar buscando similitudes con las letras que vamos ingresando 
-  Si no encuentra letras coincidentes imprimira un guion bajo en su lugar.
-  
+  Trabaja con el módulo "dibujo"
+
   Parámetros:
-    adivinar -- palabra o frase que se utilizara para iterar.
-    categoria -- Categoria a la que pertenece la palabra o frase a adivinar.
-
-  La funcion muestra las letras erroneas
-
-  Solo permite ingresar una letra a la vez para comparar
+  adivinar -- palabra o frase que se utilizara para iterar.
+  categoria -- Categoria a la que pertenece la palabra o frase a adivinar.
+  Esta funcion recibe como parametro un string en mayusculas. Pedirá al usuario que
+  ingresemos una letra y comenzará a iterar letra por letra buscando similitudes con las letras que vamos ingresando.
   
-  Si ingresas una letra que no esta en la frase se contara como 
+  -Si no encuentra letras coincidentes imprimira un guion bajo en su lugar.
+  
+  -La funcion muestra las letras erroneas
+
+  -Solo permite ingresar una letra a la vez para comparar
+  
+  -Si ingresas una letra que no esta en la frase se contara como 
   un error
 
-  Si el parametro a adivinar es una frase, el "espacio" no se
+  -Si el parámetro a adivinar es una frase, el "espacio" no se
   considerara como un guion.
 
-  La funcion termina si al iterar no encuentra guiones bajos, entonces
-  ganas el juego, si pierdes tus 6 intentos tambien acaba la funcion y pierdes el juego
+  -La funcion termina si al iterar no encuentra guiones bajos, entonces
+  ganas el juego. 
+
+  -Si pierdes tus 6 intentos tambien acaba la funcion y pierdes el juego
+
+  -Puedes terminar el juego cuando desees si ingresas la palabra "SALIR"
   """
   adivinar = adivinar.upper() 
   intentos = 0
@@ -189,8 +201,12 @@ def jugar(adivinar, categoria):
 
 def volver_jugar(funcion):
   """
+  Trabaja con el módulo "dibujo"
+  Recibe como parámetro una funcion a ejecutar en caso el valor
+  sea la palabra "SI"
   Esta funcion pregunta al usuario si quisiera volver a la
   sala principal o desea salir completamente del juego
+  Si ingresa una opción inválida mostrara un dibujo de error
   """
   dibujo.volver()
   valor = input("(SI/NO) : ").upper()
@@ -201,7 +217,6 @@ def volver_jugar(funcion):
     limpiar_consola()
     print("Adiós!!")
     dibujo.despedida()
-
   else:
     limpiar_consola()
     print("")
@@ -212,10 +227,11 @@ def volver_jugar(funcion):
 
 def opcion1():
   """
-  Esta funcion ejecuta el menu del juego del ahorcado y permite
-  escoger cualquiera de las categorias disponibles.
+  Trabaja con el módulo "dibujo" y con las función "Menu_El_Ahorcado" y 
+  la función "error".
+  Pide al usuario escoger cualquiera de las categorias disponibles.
+  Si ingress una opcion inválida se ejecutara nuevamente la función.
   """
-
   opcion = Menu_El_Ahorcado()
   if opcion == "1":
     limpiar_consola()
@@ -251,6 +267,10 @@ def opcion1():
     error(opcion1)
 
 def opcion2():
+  """
+  Trabaja con el módulo "dibujo".
+  Limpia la consola e imprime en pantalla "proximamente" y una pequeña animación.
+  """
   limpiar_consola()
   print("Proximamente...\n")
   dibujo.proximamente()
@@ -258,11 +278,20 @@ def opcion2():
   limpiar_consola()
 
 def opcion3():
+  """
+  Trabaja con el módulo "dibujo".
+  Limpia la consola e imprime en pantalla un mensaje de despedida con un dibujo.
+  """
   limpiar_consola()
   print("Adiós!!")
   dibujo.despedida()
   
 def consejos():
+  """
+  Trabaja con el módulo "categoria".
+  Trabaja con la función "choice" del módulo "random"
+  Imprime en pantalla un consejo aleatorio.
+  """
   print("Consejo para tu vida:\n")
   print(f"✩ {choice(categoria.consejos)} ✩")
   print("\n")
