@@ -1,6 +1,6 @@
 # Lista de Tareas pendientes:
 
-- Acabar el proyecto [ ]
+- Acabar el proyecto [✔]
 - Función para limpiar la consola [✔]
 
 - El programa deberá mostrar inicialmente un menú de opciones que muestre el título del programa (UTEC GAMES) y 3 opciones [✔]
@@ -17,7 +17,7 @@
 - Función para que el juego termine pasados los 6 intentos. [✔]
 - Función para mostrar las letras erroneas.[✔]
 - Función para permitir solo una letra a la vez.[✔]
-### El tablero debe mostrar estas cosas: [ ]
+### El tablero debe mostrar estas cosas: [✔]
 1. Nombre del juego
 2. La categoria de la frase
 3. El muñeco del ahorcado

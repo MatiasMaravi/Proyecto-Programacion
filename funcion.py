@@ -51,11 +51,15 @@ def Menu_UTEC_GAMES():
   Retorna la opcion ingresada.
   """
   dibujo.logo()
-  print("Seleccione una categoría")
-  print("1. Juego del ahorcado")
-  print("2. Otros juegos")
-  print("3. Salir \n")
-  opcion = str(input("Ingrese una Opcion : "))
+  print("""
+Seleccione una categoría:
+══════════════════════════
+
+1. Juego del ahorcado
+2. Otros juegos
+3. Salir 
+  """)
+  opcion = str(input("Ingrese una Opcion --→ "))
   return opcion
 
 def Menu_El_Ahorcado():
@@ -66,23 +70,25 @@ def Menu_El_Ahorcado():
     Retorna la categoria escogida.
     """
     limpiar_consola()
-    dibujo.logo()
-    opc = str(input("Elige una categoría  \n\n"
+    dibujo.logo_ahorcado()
+    print("""
+ Elige una categoría:  
+ ═══════════════════════
 
-                    "1. Peliculas Famosas \n" +
-                    "2. Videojuegos \n" +
-                    "3. Frases de Disney \n" +
-                    "4. Deportes \n" +
-                    "5. Mujeres Historicas \n" +
-                    "6. Refranes  \n\n" +
-                    "Elija una Opcion :D \n--→  "))
+ 1. Peliculas Famosas  
+ 2. Videojuegos 
+ 3. Frases de Disney  
+ 4. Deportes 
+ 5. Mujeres Historicas  
+ 6. Refranes 
+    """)
+    opc = str(input( "Elija una Opcion :D --→")) 
     return opc
 
 def error(funcion):
   """
   Trabaja con el módulo "dibujo" y la función "sleep" del módulo "time".
-  La funcion recibe otra funcion que ejecutara nuevamente pero antes limpiara 
-  la consola y te avisara que habias cometido un error por unos segundos.
+  La funcion recibe otra funcion que ejecutara nuevamente pero antes limpiara la consola y te avisara que habias cometido un error por unos segundos.
   """
   limpiar_consola()
   dibujo.error(1)

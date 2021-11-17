@@ -18,4 +18,3 @@ def main():
 
 main()
 funcion.consejos()
-#cabe recalcar que falta creatividad xd

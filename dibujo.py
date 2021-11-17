@@ -12,6 +12,17 @@ def logo():
  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
                           """)
 
+def logo_ahorcado():
+  """
+  Dibuja el logo de "UTEC GAMES" en pantalla.
+  """
+  print("""
+  ▄▄▄ ▄ ▄ ▄▄▄ ▄▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄  ▄▄▄     
+  █▄█ █▄█ █ █ █▄▄▀ █   █▄█ █  █ █ █    
+  █ █ █ █ █▄█ █ ▀▄ █▄▄ █ █ █▄▄▀ █▄█    
+══════════════════════════════════════
+                          """)
+
 def ahorcado():
   """
   Trabaja con la función "sleep" del módulo "time".

@@ -48,5 +48,8 @@ consejos = [
     "Nunca comas chicharrón en cualquier lado",
     "Cada día no puede ser bueno, pero siempre hay algo bueno en cada día",
     "No olvides que nos hace daño quien nos quiere y no quien quiere hacernos daño",
-    "Trabaja en lo que más te guste y nunca más tendras que trabajar"
+    "Trabaja en lo que más te guste y nunca más tendras que trabajar",
+    "No olvides que el tiempo solo sana lo que ya no importa",
+    "Uno es dueño de lo que calla pero esclavo de lo que dice"
+
 ]
