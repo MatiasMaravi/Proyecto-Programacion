@@ -180,26 +180,26 @@ def jugar(adivinar, categoria):
         elif len(tu_letra) >1:
           limpiar_consola()
           dibujo.error(4)
-          sleep(1.5)
+          sleep(2)
         
         elif validar_especiales(tu_letra) == False:
           limpiar_consola()
           dibujo.error(5)
-          sleep(1.5)
+          sleep(2)
 
         elif tu_letra not in adivinar:
             letras_ingresadas += tu_letra
             errores.append(tu_letra)
             limpiar_consola()
             intentos += 1
-
         else:
             limpiar_consola()
             letras_ingresadas += tu_letra
 
       else:
         dibujo.ahorcado()
-        print("Intentos agotados, perdiste el juego")
+        print("Intentos agotados, perdiste el juego\n")
+        print(f"La palabra era '{adivinar}'")
         dibujo.imprimir_ahorcado(intentos)
         sleep(2)
         limpiar_consola()

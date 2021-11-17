@@ -35,6 +35,7 @@ def ahorcado():
 █ █ █   █  █ █  █ █▄▄█ █ ▀▄ █▄▄ █  █ █▄▄▀ █▄▄█   ▄ ▄ ▄
                ''')
   sleep(0.75)
+  funcion.limpiar_consola()
 
 def introduccion():
   """
@@ -338,3 +339,77 @@ def imprimir_ahorcado(errores):
     █  / \   |  █
     █        |  █
     █▄▄▄▄▄▄▄▄▄▄▄█''')
+
+
+def animacion_ahorcado(adivinar):
+  funcion.limpiar_consola()
+  print("Intentos agotados, perdiste el juego\n")
+  print(f"La palabra era '{adivinar}'")
+  print('''
+     ▄▄▄▄▄▄▄▄▄▄▄▄
+    █ UTEC      █
+    █    ____   █
+    █   O═══╝ | █
+    █  /|\    | █
+    █  / \    | █
+    █         | █
+    █           █
+    █▄▄▄▄▄▄▄▄▄▄▄█''')
+  sleep(1)
+  funcion.limpiar_consola()
+  print("Intentos agotados, perdiste el juego\n")
+  print(f"La palabra era '{adivinar}'")
+  print('''
+     ▄▄▄▄▄▄▄▄▄▄▄▄
+    █ UTEC      █
+    █    _____  █
+    █   O__|  | █
+    █  /|\    | █
+    █  / \    | █
+    █         | █
+    █           █
+    █▄▄▄▄▄▄▄▄▄▄▄█''')
+  sleep(1)
+  funcion.limpiar_consola()
+  print("Intentos agotados, perdiste el juego\n")
+  print(f"La palabra era '{adivinar}'") 
+  print('''
+     ▄▄▄▄▄▄▄▄▄▄▄▄
+    █ UTEC      █
+    █     _____ █
+    █     _|  | █
+    █   O/    | █
+    █  /|\    | █
+    █  / \    | █
+    █           █
+    █▄▄▄▄▄▄▄▄▄▄▄█''')
+  sleep(1)
+  funcion.limpiar_consola()
+  print("Intentos agotados, perdiste el juego\n")
+  print(f"La palabra era '{adivinar}'")
+  print('''
+     ▄▄▄▄▄▄▄▄▄▄▄▄
+    █ UTEC      █
+    █     _____ █
+    █     /   | █
+    █   O/    | █
+    █  /|\    | █
+    █  / \    | █
+    █           █
+    █▄▄▄▄▄▄▄▄▄▄▄█''')
+  sleep(1)
+  funcion.limpiar_consola()
+  print("Intentos agotados, perdiste el juego\n")
+  print(f"La palabra era '{adivinar}'")
+  print('''
+    ▄▄▄▄▄▄▄▄▄▄▄▄
+    █ UTEC      █
+    █    _____  █
+    █    |DEAD| █
+    █    O    | █
+    █   /|\   | █
+    █   / \   | █
+    █         | █
+    █▄▄▄▄▄▄▄▄▄▄▄█''') 
+
+
