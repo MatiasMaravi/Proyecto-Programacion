@@ -7,7 +7,7 @@ def main():
   if Opcion_de_Menu == "1":
     dibujo.introduccion()
     funcion.opcion1()
-    funcion.volver_jugar(main)  
+    funcion.volver_sala(main)  
   elif Opcion_de_Menu == "2":
     funcion.opcion2()
     main()
@@ -18,3 +18,4 @@ def main():
 
 main()
 funcion.consejos()
+

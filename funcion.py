@@ -96,6 +96,45 @@ def error(funcion):
   sleep(2)
   limpiar_consola()
   funcion()
+def imprimir_guiones(adivinar,letras_ingresadas):
+    guiones = 0
+    for letra in adivinar:
+      if letra in letras_ingresadas: 
+          print(letra,end=" ")
+      elif letra == " ":
+          print("  ",end=" ") 
+      else:
+          print("_",end=" ")
+          guiones +=1
+    return guiones
+
+def perder(adivinar):
+    """
+    La funcion recibe como parametro la palabra a adivinar y la muestra luego
+    de imprimir un mensaje de derrota y mostrar al muñeco
+    ahorcado. 
+    Pedira al usuario que ingrese alguna tecla para continuar
+    """
+    dibujo.ahorcadooo()
+    print("Intentos agotados, perdiste el juego\n")
+    print(f"La palabra era '{adivinar}'")
+    dibujo.imprimir_ahorcado(6)
+    input("\nIngresa cualquier tecla para continuar: ")
+    limpiar_consola()
+
+def ganar():
+    """
+    La funcion imprime un mensaje de victoria y muestra al muñeco
+    escapando del juego. 
+    Pedira al usuario que ingrese alguna tecla para continuar
+    """
+    limpiar_consola()
+    print("")
+    print("GANASTE!!!!", end="")
+    dibujo.salvado()
+    print("Completaste la frase, felicidades!!\n")
+    input("Ingresa cualquier tecla para continuar: ")
+    limpiar_consola()  
 
 def jugar(adivinar, categoria): 
   """
@@ -104,8 +143,7 @@ def jugar(adivinar, categoria):
   Parámetros:
   adivinar -- palabra o frase que se utilizara para iterar.
   categoria -- Categoria a la que pertenece la palabra o frase a adivinar.
-  Esta funcion recibe como parametro un string en mayusculas. Pedirá al usuario que
-  ingresemos una letra y comenzará a iterar letra por letra buscando similitudes con las letras que vamos ingresando.
+  Esta funcion Pedirá al usuario que ingresemos una letra y comenzará a iterar letra por letra buscando similitudes con las letras que vamos ingresando.
   
   -Si no encuentra letras coincidentes imprimira un guion bajo en su lugar.
   
@@ -136,9 +174,7 @@ def jugar(adivinar, categoria):
         print("*** EL JUEGO DEL AHORCADO *** \n")
         print(f"Categoria: {categoria}")
         dibujo.imprimir_ahorcado(intentos)
-        guiones = 0
         print("")
-
         if intentos == 5:
           print(f"CUIDADO!!! solo te queda {6-intentos} intento\n")
         else:
@@ -147,24 +183,11 @@ def jugar(adivinar, categoria):
         for error in errores:
            print(f"[ {error} ]",end=" ")
         print("\n")
-        for letra in adivinar:
-            if letra in letras_ingresadas: 
-                print(letra,end=" ")
-            elif letra == " ":
-                print("  ",end=" ") 
-            else:
-                print("_",end=" ")
-                guiones +=1
 
+        guiones = imprimir_guiones(adivinar,letras_ingresadas)
         print("")
         if guiones == 0: 
-          limpiar_consola()
-          print("")
-          print("GANASTE!!!!", end="")
-          dibujo.salvado()
-          print("Completaste la frase, felicidades!!")
-          sleep(2)
-          limpiar_consola()
+          ganar()
           break
         
         print("")
@@ -172,11 +195,11 @@ def jugar(adivinar, categoria):
         if tu_letra == "SALIR":
           dibujo.muerte()
           break
-        if letra_repetida(tu_letra, letras_ingresadas) == False:
+        elif letra_repetida(tu_letra, letras_ingresadas) == False:
           limpiar_consola()
           dibujo.error(3)
           sleep(2)
-          
+
         elif len(tu_letra) >1:
           limpiar_consola()
           dibujo.error(4)
@@ -197,15 +220,10 @@ def jugar(adivinar, categoria):
             letras_ingresadas += tu_letra
 
       else:
-        dibujo.ahorcado()
-        print("Intentos agotados, perdiste el juego\n")
-        print(f"La palabra era '{adivinar}'")
-        dibujo.imprimir_ahorcado(intentos)
-        sleep(2)
-        limpiar_consola()
+        perder(adivinar)
         break
 
-def volver_jugar(funcion):
+def volver_sala(funcion):
   """
   Trabaja con el módulo "dibujo"
   Recibe como parámetro una funcion a ejecutar en caso el valor
@@ -229,14 +247,14 @@ def volver_jugar(funcion):
     dibujo.error(2)
     sleep(2)
     limpiar_consola()
-    volver_jugar(funcion)
+    volver_sala(funcion)
 
 def opcion1():
   """
   Trabaja con el módulo "dibujo" y con las función "Menu_El_Ahorcado" y 
   la función "error".
   Pide al usuario escoger cualquiera de las categorias disponibles.
-  Si ingress una opcion inválida se ejecutara nuevamente la función.
+  Si ingresas una opcion inválida se ejecutara nuevamente la función.
   """
   opcion = Menu_El_Ahorcado()
   if opcion == "1":

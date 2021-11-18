@@ -23,7 +23,7 @@ def logo_ahorcado():
 ══════════════════════════════════════
                           """)
 
-def ahorcado():
+def ahorcadooo():
   """
   Trabaja con la función "sleep" del módulo "time".
   Borra la consola e imprime la palabra "Ahorcado" por unos breves segundos.
@@ -63,7 +63,8 @@ def introduccion():
     sleep(0.1)
   sleep(0.7)
   funcion.limpiar_consola()
-  ahorcado()
+  ahorcadooo()
+  reglas()
 
 def a_jugar():
     """
@@ -92,6 +93,32 @@ def a_jugar():
         sleep(0.1)
     sleep(0.5)
     funcion.limpiar_consola()
+
+def reglas():
+  """
+  Imprimira las reglas en pantalla y pedira al usuario que ingrese alguna 
+  tecla para continuar
+  """
+  print("""
+ ▄▄▄▄ ▄▄▄ ▄▄▄  ▄   ▄▄▄ ▄▄▄   
+ █▄▄▀ █▄▄ █ ▄▄ █   █▄█ █▄▄
+ █ ▀▄ █▄▄ █▄▄█ █▄▄ █ █ ▄▄█
+═══════════════════════════
+                          """)
+  print("""
+1. Solo puedes ingresar una letra a la vez.
+
+2. Solo puedes ingresar letras del abecedario(No tildes).
+
+3. Si ya ingresaste una letra no puedes repetirla.
+
+4. Solo tienes 6 intentos, si ingresas una letra 
+que no esté en la frase perderás un intento.
+
+5. Si quieres escapar del juego escribe "salir". 
+  """)
+  
+  input("Ingresa cualquier tecla continuar: ")
 
 def salvado():
     """
@@ -340,7 +367,6 @@ def imprimir_ahorcado(errores):
     █        |  █
     █▄▄▄▄▄▄▄▄▄▄▄█''')
 
-
 def animacion_ahorcado(adivinar):
   funcion.limpiar_consola()
   print("Intentos agotados, perdiste el juego\n")
@@ -411,5 +437,4 @@ def animacion_ahorcado(adivinar):
     █   / \   | █
     █         | █
     █▄▄▄▄▄▄▄▄▄▄▄█''') 
-
 

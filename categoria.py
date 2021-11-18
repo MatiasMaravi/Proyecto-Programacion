@@ -9,14 +9,14 @@ videos_juegos = [
 ]
 
 peliculas_mas_vistas = [
-    "Vengadores", "Avatar", "Titanic", "Star Wars", "Jurassic World"
+    "Avengers End Game", "Avatar", "Titanic", "Star Wars", "Jurassic World"
 ]
 
 deportes = ["Futbol", "Baloncesto", "Badminton", "Natacion", "Tenis de Mesa"]
 
 mujeres_historicas = [
     "Marie Curie", "Katherine Johnson", "Madre Teresa de Calcuta",
-    "Malala Yousafzai"
+    "Malala Yousafzai","Ana Frank"
 ]
 
 refranes = [
@@ -30,7 +30,6 @@ consejos = [
     "No aconsejes a nadie que no te lo haya pedido",
     "No creas que lo evidente siempre es la verdad",
     "No busques lo difícil, espera a que no lo sea",
-    "Nunca lastimes a quien despues no puedas matar",
     "Nunca jures nada con un trago en la mano",
     "Si todo va muy bien, seguro va a pasar algo malo",
     "No regales un libro a quién no sabe leer",
@@ -50,6 +49,5 @@ consejos = [
     "No olvides que nos hace daño quien nos quiere y no quien quiere hacernos daño",
     "Trabaja en lo que más te guste y nunca más tendras que trabajar",
     "No olvides que el tiempo solo sana lo que ya no importa",
-    "Uno es dueño de lo que calla pero esclavo de lo que dice"
-
+    "Recuerda que uno es dueño de lo que calla pero esclavo de lo que dice"
 ]
