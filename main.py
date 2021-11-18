@@ -17,5 +17,3 @@ def main():
     funcion.error(main)
 
 main()
-funcion.consejos()
-

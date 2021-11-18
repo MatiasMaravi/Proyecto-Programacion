@@ -122,6 +122,16 @@ def perder(adivinar):
     input("\nIngresa cualquier tecla para continuar: ")
     limpiar_consola()
 
+def consejos():
+  """
+  Trabaja con el módulo "categoria".
+  Trabaja con la función "choice" del módulo "random"
+  Imprime en pantalla un consejo aleatorio.
+  """
+  print("Consejo para tu vida:\n")
+  print(f"✩ {choice(categoria.consejos)} ✩")
+  print("\n")
+
 def ganar():
     """
     La funcion imprime un mensaje de victoria y muestra al muñeco
@@ -133,6 +143,7 @@ def ganar():
     print("GANASTE!!!!", end="")
     dibujo.salvado()
     print("Completaste la frase, felicidades!!\n")
+    consejos()
     input("Ingresa cualquier tecla para continuar: ")
     limpiar_consola()  
 
@@ -188,6 +199,7 @@ def jugar(adivinar, categoria):
         print("")
         if guiones == 0: 
           ganar()
+
           break
         
         print("")
@@ -310,12 +322,4 @@ def opcion3():
   print("Adiós!!")
   dibujo.despedida()
   
-def consejos():
-  """
-  Trabaja con el módulo "categoria".
-  Trabaja con la función "choice" del módulo "random"
-  Imprime en pantalla un consejo aleatorio.
-  """
-  print("Consejo para tu vida:\n")
-  print(f"✩ {choice(categoria.consejos)} ✩")
-  print("\n")
+

@@ -115,7 +115,8 @@ def reglas():
 4. Solo tienes 6 intentos, si ingresas una letra 
 que no esté en la frase perderás un intento.
 
-5. Si quieres escapar del juego escribe "salir". 
+5. Una vez empezado el juego podras escapar 
+escribiendo "salir". 
   """)
   
   input("Ingresa cualquier tecla continuar: ")
