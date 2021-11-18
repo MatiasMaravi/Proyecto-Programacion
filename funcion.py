@@ -26,12 +26,9 @@ def letra_repetida(letra, lista):
   en la lista y retorna "False" de ser el caso.
   En caso la letra no se encuentre en la lista retorna "True"
   """
-  lista_respaldo = [letra]
   for i in lista:
-      if i  in lista_respaldo:
+      if letra == i: 
           return False     
-      else:
-          lista_respaldo.append(i)
   return True
 
 def validar_especiales(pal):
@@ -85,6 +82,7 @@ def Menu_El_Ahorcado():
     opc = str(input( "Elija una Opcion :D --→")) 
     return opc
 
+
 def error(funcion):
   """
   Trabaja con el módulo "dibujo" y la función "sleep" del módulo "time".
@@ -96,6 +94,7 @@ def error(funcion):
   sleep(2)
   limpiar_consola()
   funcion()
+  
 def imprimir_guiones(adivinar,letras_ingresadas):
     guiones = 0
     for letra in adivinar:
@@ -321,5 +320,3 @@ def opcion3():
   limpiar_consola()
   print("Adiós!!")
   dibujo.despedida()
-  
-
