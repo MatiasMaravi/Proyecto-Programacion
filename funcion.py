@@ -94,7 +94,7 @@ def error(funcion):
   sleep(2)
   limpiar_consola()
   funcion()
-  
+
 def imprimir_guiones(adivinar,letras_ingresadas):
     guiones = 0
     for letra in adivinar:
@@ -127,7 +127,8 @@ def consejos():
   Trabaja con la función "choice" del módulo "random"
   Imprime en pantalla un consejo aleatorio.
   """
-  print("Consejo para tu vida:\n")
+  print("Consejo para tu vida:")
+  print("------------------------\n")
   print(f"✩ {choice(categoria.consejos)} ✩")
   print("\n")
 
@@ -186,9 +187,10 @@ def jugar(adivinar, categoria):
         dibujo.imprimir_ahorcado(intentos)
         print("")
         if intentos == 5:
-          print(f"CUIDADO!!! solo te queda {6-intentos} intento\n")
+          print(f"CUIDADO!!! solo te queda 1 intento\n")
         else:
           print(f"Te quedan {6-intentos} intentos\n")
+          
         print(f"Errores: ", end=" ")
         for error in errores:
            print(f"[ {error} ]",end=" ")
@@ -198,34 +200,37 @@ def jugar(adivinar, categoria):
         print("")
         if guiones == 0: 
           ganar()
-
           break
         
         print("")
+
+        #Aqui empieza a pedirnos letras
         tu_letra = input("Introduce tu letra: ").upper()
         if tu_letra == "SALIR":
           dibujo.muerte()
           break
+
         elif letra_repetida(tu_letra, letras_ingresadas) == False:
           limpiar_consola()
           dibujo.error(3)
-          sleep(2)
+          sleep(2.5)
 
         elif len(tu_letra) >1:
           limpiar_consola()
           dibujo.error(4)
-          sleep(2)
+          sleep(2.5)
         
         elif validar_especiales(tu_letra) == False:
           limpiar_consola()
           dibujo.error(5)
-          sleep(2)
+          sleep(2.5)
 
         elif tu_letra not in adivinar:
             letras_ingresadas += tu_letra
             errores.append(tu_letra)
             limpiar_consola()
             intentos += 1
+
         else:
             limpiar_consola()
             letras_ingresadas += tu_letra
