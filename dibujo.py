@@ -65,7 +65,7 @@ def introduccion():
   sleep(0.7)
   funcion.limpiar_consola()
   ahorcadooo()
-  reglas()
+
 
 def a_jugar():
     """
@@ -107,20 +107,23 @@ def reglas():
 ═══════════════════════════
                           """)
   print("""
-1. Solo puedes ingresar una letra a la vez.
+1. Tienes que adivinar la palabra o frase relacionada a
+la categoria que escojas.
 
-2. Solo puedes ingresar letras del abecedario(No tildes).
+2. Solo puedes ingresar una letra a la vez.
 
-3. Si ya ingresaste una letra no puedes repetirla.
+3. Solo puedes ingresar letras del abecedario(No tildes).
 
-4. Solo tienes 6 intentos, si ingresas una letra 
+4. Si ya ingresaste una letra no puedes repetirla.
+
+5. Solo tienes 6 intentos, si ingresas una letra 
 que no esté en la frase perderás un intento.
 
-5. Una vez empezado el juego podras escapar 
-escribiendo "salir". 
+6. Una vez empezado el juego tienes la opcion de escapar 
+escribiendo la palabra "salir". 
   """)
   
-  input("Ingresa cualquier tecla continuar: ")
+  input("Presiona enter para continuar: ")
 
 def salvado():
     """
@@ -173,7 +176,7 @@ def muerte():
 ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
 ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
 ⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄COBARDE!!! ⠙ ''')
-    sleep(1)
+    sleep(2)
     funcion.limpiar_consola()
 
 def proximamente():

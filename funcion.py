@@ -78,8 +78,10 @@ def Menu_El_Ahorcado():
  4. Deportes 
  5. Mujeres Historicas  
  6. Refranes 
+
+ (Si quieres ver las reglas del juego ingresa "reglas")
     """)
-    opc = str(input( "Elija una Opcion :D --→")) 
+    opc = str(input( "Elija una Opcion :D --→ ")).upper() 
     return opc
 
 
@@ -301,6 +303,10 @@ def opcion1():
     limpiar_consola()
     dibujo.a_jugar()
     jugar(choice(categoria.refranes),"Refranes")
+  elif opcion == "REGLAS":
+    limpiar_consola()
+    dibujo.reglas()
+    opcion1()    
 
   else:
     limpiar_consola()
