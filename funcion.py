@@ -36,7 +36,7 @@ def validar_especiales(pal):
   Esta función reconoce si el valor ingresado es una letra. Caso contrario retornara False.  
   '''
   for letra in pal:
-      if letra not in "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ":
+      if letra not in "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789":
           return False
   return True
 
@@ -142,12 +142,28 @@ def ganar():
     """
     limpiar_consola()
     print("")
-    print("GANASTE!!!!", end="")
+    print("GANASTE!!!", end="")
     dibujo.salvado()
     print("Completaste la frase, felicidades!!\n")
     consejos()
     input("Ingresa cualquier tecla para continuar: ")
     limpiar_consola()  
+
+def interfaz(intentos,errores,categoria):
+      limpiar_consola()
+      print("*** EL JUEGO DEL AHORCADO *** \n")
+      print(f"Categoria: {categoria}")
+      dibujo.imprimir_ahorcado(intentos)
+      print("")
+      if intentos == 5:
+        print(f"CUIDADO!!! solo te queda 1 intento\n")
+      else:
+        print(f"Te quedan {6-intentos} intentos\n")
+        
+      print(f"Errores: ", end=" ")
+      for error in errores:
+          print(f"[ {error} ]",end=" ")
+      print("\n")
 
 def jugar(adivinar, categoria): 
   """
@@ -183,35 +199,19 @@ def jugar(adivinar, categoria):
   letras_ingresadas = ""
   while True:
       if intentos < 6 :
-        limpiar_consola()
-        print("*** EL JUEGO DEL AHORCADO *** \n")
-        print(f"Categoria: {categoria}")
-        dibujo.imprimir_ahorcado(intentos)
-        print("")
-        if intentos == 5:
-          print(f"CUIDADO!!! solo te queda 1 intento\n")
-        else:
-          print(f"Te quedan {6-intentos} intentos\n")
-          
-        print(f"Errores: ", end=" ")
-        for error in errores:
-           print(f"[ {error} ]",end=" ")
-        print("\n")
-
+        interfaz(intentos,errores,categoria)
         guiones = imprimir_guiones(adivinar,letras_ingresadas)
         print("")
         if guiones == 0: 
           ganar()
           break
-        
         print("")
-
         #Aqui empieza a pedirnos letras
         tu_letra = input("Introduce tu letra: ").upper()
         if tu_letra == "SALIR":
           dibujo.muerte()
           break
-
+          
         elif letra_repetida(tu_letra, letras_ingresadas) == False:
           limpiar_consola()
           dibujo.error(3)
