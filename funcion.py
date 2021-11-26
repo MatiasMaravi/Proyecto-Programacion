@@ -107,6 +107,7 @@ def imprimir_guiones(adivinar,letras_ingresadas):
       else:
           print("_",end=" ")
           guiones +=1
+    print("")
     return guiones
 
 def perder(adivinar):
@@ -165,6 +166,27 @@ def interfaz(intentos,errores,categoria):
           print(f"[ {error} ]",end=" ")
       print("\n")
 
+def validacion_de_reglas(tu_letra,letras_ingresadas):
+    if letra_repetida(tu_letra, letras_ingresadas) == False:
+      limpiar_consola()
+      dibujo.error(3)
+      sleep(2.5)
+      return False
+
+    elif len(tu_letra) >1:
+      limpiar_consola()
+      dibujo.error(4)
+      sleep(2.5)
+      return False
+  
+    elif validar_especiales(tu_letra) == False:
+      limpiar_consola()
+      dibujo.error(5)
+      sleep(2.5)
+      return False
+    else:
+      return True
+
 def jugar(adivinar, categoria): 
   """
   Trabaja con el módulo "dibujo"
@@ -201,7 +223,7 @@ def jugar(adivinar, categoria):
       if intentos < 6 :
         interfaz(intentos,errores,categoria)
         guiones = imprimir_guiones(adivinar,letras_ingresadas)
-        print("")
+        
         if guiones == 0: 
           ganar()
           break
@@ -211,31 +233,18 @@ def jugar(adivinar, categoria):
         if tu_letra == "SALIR":
           dibujo.muerte()
           break
-          
-        elif letra_repetida(tu_letra, letras_ingresadas) == False:
-          limpiar_consola()
-          dibujo.error(3)
-          sleep(2.5)
-
-        elif len(tu_letra) >1:
-          limpiar_consola()
-          dibujo.error(4)
-          sleep(2.5)
         
-        elif validar_especiales(tu_letra) == False:
-          limpiar_consola()
-          dibujo.error(5)
-          sleep(2.5)
+        if validacion_de_reglas(tu_letra,letras_ingresadas):
+          
+          if tu_letra not in adivinar:
+              letras_ingresadas += tu_letra
+              errores.append(tu_letra)
+              limpiar_consola()
+              intentos += 1
 
-        elif tu_letra not in adivinar:
-            letras_ingresadas += tu_letra
-            errores.append(tu_letra)
-            limpiar_consola()
-            intentos += 1
-
-        else:
-            limpiar_consola()
-            letras_ingresadas += tu_letra
+          else:
+              limpiar_consola()
+              letras_ingresadas += tu_letra
 
       else:
         perder(adivinar)
