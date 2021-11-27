@@ -12,6 +12,14 @@ def logo():
 █  █▄▄█  █  █▄▄ █▄▄   █▄▄█ █ █ █   █ █▄▄ ▄▄█  █
  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
                           """)
+  print("""
+  Seleccione una categoría:
+  ══════════════════════════
+
+  1. Juego del ahorcado
+  2. Otros juegos
+  3. Salir 
+    """)
 
 def logo_ahorcado():
   """
@@ -23,6 +31,19 @@ def logo_ahorcado():
   █ █ █ █ █▄█ █ ▀▄ █▄▄ █ █ █▄▄▀ █▄█    
 ══════════════════════════════════════
                           """)
+  print("""
+ Elige una categoría:  
+ ═══════════════════════
+
+ 1. Peliculas Famosas  
+ 2. Videojuegos 
+ 3. Frases de Disney  
+ 4. Deportes 
+ 5. Mujeres Historicas  
+ 6. Refranes 
+
+ (Si quieres ver las reglas del juego ingresa "reglas")
+    """)
 
 def ahorcadooo():
   """

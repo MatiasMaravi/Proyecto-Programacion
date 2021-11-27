@@ -48,14 +48,7 @@ def Menu_UTEC_GAMES():
   Retorna la opcion ingresada.
   """
   dibujo.logo()
-  print("""
-Seleccione una categoría:
-══════════════════════════
 
-1. Juego del ahorcado
-2. Otros juegos
-3. Salir 
-  """)
   opcion = str(input("Ingrese una Opcion --→ "))
   return opcion
 
@@ -68,19 +61,7 @@ def Menu_El_Ahorcado():
     """
     limpiar_consola()
     dibujo.logo_ahorcado()
-    print("""
- Elige una categoría:  
- ═══════════════════════
 
- 1. Peliculas Famosas  
- 2. Videojuegos 
- 3. Frases de Disney  
- 4. Deportes 
- 5. Mujeres Historicas  
- 6. Refranes 
-
- (Si quieres ver las reglas del juego ingresa "reglas")
-    """)
     opc = str(input( "Elija una Opcion :D --→ ")).upper() 
     return opc
 
@@ -215,35 +196,32 @@ def jugar(adivinar, categoria):
   intentos = 0
   errores = [] 
   letras_ingresadas = ""
-  while True:
-      if intentos < 6 :
-        interfaz(intentos,errores,categoria)
-        guiones = imprimir_guiones(adivinar,letras_ingresadas)
-        
-        if guiones == 0: 
-          ganar()
-          break
-        print()
-        tu_letra = input("Introduce tu letra: ").upper()
-        if tu_letra == "SALIR":
-          dibujo.muerte()
-          break
-        
-        if validacion_de_reglas(tu_letra,letras_ingresadas):
-          
-          if tu_letra not in adivinar:
-              letras_ingresadas += tu_letra
-              errores.append(tu_letra)
-              limpiar_consola()
-              intentos += 1
+  while intentos < 6:
+    interfaz(intentos,errores,categoria)
+    guiones = imprimir_guiones(adivinar,letras_ingresadas)
+    
+    if guiones == 0: 
+      return ganar()
 
-          else:
-              limpiar_consola()
-              letras_ingresadas += tu_letra
+    print()
+    tu_letra = input("Introduce tu letra: ").upper()
+    if tu_letra == "SALIR":
+      return dibujo.muerte()
+
+    if validacion_de_reglas(tu_letra,letras_ingresadas):
+      
+      if tu_letra not in adivinar:
+          letras_ingresadas += tu_letra
+          errores.append(tu_letra)
+          limpiar_consola()
+          intentos += 1
 
       else:
-        perder(adivinar)
-        break
+          limpiar_consola()
+          letras_ingresadas += tu_letra
+
+  return perder(adivinar)
+
 
 def volver_sala(funcion):
   """
