@@ -1,19 +1,20 @@
-import funcion as f
-import dibujo as d
+import funcion as F
+import dibujo as D
 
 def main():
-  f.limpiar_consola()
-  Opcion_de_Menu = f.Menu_UTEC_GAMES()
+  F.limpiar_consola()
+  Opcion_de_Menu = D.menu_utec()
   if Opcion_de_Menu == "1":
-    d.introduccion()
-    f.opcion1()
-    f.volver_sala(main)  
+    D.introduccion()
+    F.opcion1()
+    F.volver_sala(main)  
   elif Opcion_de_Menu == "2":
-    f.opcion2()
+    F.opcion2()
     main()
   elif Opcion_de_Menu == "3":
-    f.opcion3()
+    F.opcion3()
   else:
-    f.error(main)
+    D.error(1)
+    main()
 
 main()

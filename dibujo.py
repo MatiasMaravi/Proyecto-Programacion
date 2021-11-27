@@ -1,10 +1,15 @@
 from time import sleep
-import funcion
+import funcion as F
 #LOGOS
-def logo():
+def menu_utec():
   """
   Dibuja el logo de "UTEC GAMES" en pantalla.
-  """
+ 
+  Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario 
+  seleccione la categoría o regrese al menú anterior. 
+  Retorna la opcion ingresada.
+ """
+
   print("""
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  
 █  ▄  ▄ ▄▄▄ ▄▄▄ ▄▄▄   ▄▄▄  ▄▄▄ ▄▄ ▄▄ ▄▄▄ ▄▄▄  █ 
@@ -13,25 +18,32 @@ def logo():
  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
                           """)
   print("""
-  Seleccione una categoría:
-  ══════════════════════════
+Seleccione una categoría:
+══════════════════════════
 
-  1. Juego del ahorcado
-  2. Otros juegos
-  3. Salir 
-    """)
+1. Juego del ahorcado
+2. Otros juegos
+3. Salir 
+  """)
+  opcion = str(input("Ingrese una Opcion --→ "))
+  return opcion
 
-def logo_ahorcado():
+def menu_ahorcado():
   """
   Dibuja el logo de "UTEC GAMES" en pantalla.
+     
+  Esta función limpia la consola y muestra el título del juego "El ahorcado", 
+  además muestra un menú para que el usuario seleccione la categoría o regrese al menú anterior.
+  Retorna la categoria escogida.
+  
   """
+  F.limpiar_consola()
   print("""
   ▄▄▄ ▄ ▄ ▄▄▄ ▄▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄  ▄▄▄     
   █▄█ █▄█ █ █ █▄▄▀ █   █▄█ █  █ █ █    
   █ █ █ █ █▄█ █ ▀▄ █▄▄ █ █ █▄▄▀ █▄█    
 ══════════════════════════════════════
-                          """)
-  print("""
+
  Elige una categoría:  
  ═══════════════════════
 
@@ -43,21 +55,24 @@ def logo_ahorcado():
  6. Refranes 
 
  (Si quieres ver las reglas del juego ingresa "reglas")
-    """)
+  """)
+  
+  opc = str(input( "Elija una Opcion :D --→ ")).upper() 
+  return opc
 
 def ahorcadooo():
   """
   Trabaja con la función "sleep" del módulo "time".
   Borra la consola e imprime la palabra "Ahorcado" por unos breves segundos.
   """
-  funcion.limpiar_consola()
+  F.limpiar_consola()
   print('''
 ▀ ▀ ▀   █▀▀█ █  █ █▀▀█ █▀▀▄ █▀▀ █▀▀█ █▀▀▄ █▀▀█   █ █ █
 █ █ █   █▄▄█ █▄▄█ █  █ █▄▄▀ █   █▄▄█ █  █ █  █   █ █ █
 █ █ █   █  █ █  █ █▄▄█ █ ▀▄ █▄▄ █  █ █▄▄▀ █▄▄█   ▄ ▄ ▄
                ''')
   sleep(0.75)
-  funcion.limpiar_consola()
+  F.limpiar_consola()
 
 def introduccion():
   """
@@ -80,11 +95,11 @@ def introduccion():
     ]
 
   for figura in figuras:
-    funcion.limpiar_consola()
+    F.limpiar_consola()
     print(figura)
     sleep(0.1)
   sleep(0.7)
-  funcion.limpiar_consola()
+  F.limpiar_consola()
   ahorcadooo()
 
 
@@ -110,11 +125,11 @@ def a_jugar():
     ]
 
     for figura in figuras:
-        funcion.limpiar_consola()
+        F.limpiar_consola()
         print(figura)
         sleep(0.1)
     sleep(0.5)
-    funcion.limpiar_consola()
+    F.limpiar_consola()
 
 def reglas():
   """
@@ -181,7 +196,7 @@ def muerte():
     Trabaja con la función "sleep" del módulo "time".
     Limpia la consola y muestra a la muerte llamandote cobarde por rendirte y escapar del juego.
     """
-    funcion.limpiar_consola()
+    F.limpiar_consola()
     print('''  
 ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
@@ -198,7 +213,7 @@ def muerte():
 ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
 ⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄COBARDE!!! ⠙ ''')
     sleep(2)
-    funcion.limpiar_consola()
+    F.limpiar_consola()
 
 def proximamente():
     """
@@ -255,6 +270,7 @@ def error(opcion):
   4. "Solo ingresa una letra a la vez"
   5. "Solo ingresa letras del abecedario"
   """
+  F.limpiar_consola()
   if opcion == 1:
     print('''
    __^__                                      __^__
@@ -263,30 +279,35 @@ def error(opcion):
    | / |  Por favor ingrese una opción valida | \ |
    |___|                                      |___|
   (_____)------------------------------------(_____) ''')
+    sleep(2)
 
   elif opcion == 2:
     print('''                     
-  ╔═══════════════════════════════════════════╗ 
-  ║  Por favor solo responder "si" o "no" :D  ║ 
-  ╚═══════════════════════════════════════════╝ ''')
+╔═══════════════════════════════════════════╗ 
+║  Por favor solo responder "si" o "no" :D  ║ 
+╚═══════════════════════════════════════════╝ ''')
+
   elif opcion == 3:
     print('''
-  ╔═══════════════════════════════════════════════════════════╗ 
-  ║ Ya ingresaste esa LETRA, ingresa una DIFERENTE ¯\_(ツ)_/¯ ║ 
-  ╚═══════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════╗ 
+║ Ya ingresaste esa LETRA, ingresa una DIFERENTE ¯\_(ツ)_/¯ ║ 
+╚═══════════════════════════════════════════════════════════╝
   ''')
+
   elif opcion == 4:
     print('''
-  ╔══════════════════════════════════════════════╗ 
-  ║ Solo UNA letra a la vez por favor ¯\_(ツ)_/¯ ║ 
-  ╚══════════════════════════════════════════════╝
+╔══════════════════════════════════════════════╗ 
+║ Solo UNA letra a la vez por favor ¯\_(ツ)_/¯ ║ 
+╚══════════════════════════════════════════════╝
   ''')
+
   elif opcion == 5:
     print('''
-  ╔══════════════════════════════════════════╗ 
-  ║ Por favor solo ingresa LETRAS ¯\_(ツ)_/¯ ║ 
-  ╚══════════════════════════════════════════╝
+╔══════════════════════════════════════════╗ 
+║ Por favor solo ingresa LETRAS ¯\_(ツ)_/¯ ║ 
+╚══════════════════════════════════════════╝
   ''')
+
 
 def imprimir_ahorcado(errores):
     """
