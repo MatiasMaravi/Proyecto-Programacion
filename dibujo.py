@@ -112,7 +112,7 @@ la categoria que escojas.
 
 2. Solo puedes ingresar una letra a la vez.
 
-3. Solo puedes ingresar letras del abecedario(No tildes).
+3. Solo puedes ingresar letras o números (No tildes).
 
 4. Si ya ingresaste una letra no puedes repetirla.
 

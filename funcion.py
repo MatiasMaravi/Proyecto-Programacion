@@ -98,6 +98,11 @@ def error(funcion):
   funcion()
 
 def imprimir_guiones(adivinar,letras_ingresadas):
+    """
+    -Si no encuentra letras coincidentes imprimira un guion bajo en su lugar.
+
+    -Si el parámetro a adivinar es una frase, el "espacio" no se considerara como un guion.
+    """
     guiones = 0
     for letra in adivinar:
       if letra in letras_ingresadas: 
@@ -196,20 +201,11 @@ def jugar(adivinar, categoria):
   categoria -- Categoria a la que pertenece la palabra o frase a adivinar.
   Esta funcion Pedirá al usuario que ingresemos una letra y comenzará a iterar letra por letra buscando similitudes con las letras que vamos ingresando.
   
-  -Si no encuentra letras coincidentes imprimira un guion bajo en su lugar.
-  
   -La funcion muestra las letras erroneas
 
-  -Solo permite ingresar una letra a la vez para comparar
-  
-  -Si ingresas una letra que no esta en la frase se contara como 
-  un error
+  -Si ingresas una letra que no esta en la frase se contara como un error
 
-  -Si el parámetro a adivinar es una frase, el "espacio" no se
-  considerara como un guion.
-
-  -La funcion termina si al iterar no encuentra guiones bajos, entonces
-  ganas el juego. 
+  -La funcion termina si al iterar no encuentra guiones bajos, entonces ganas el juego. 
 
   -Si pierdes tus 6 intentos tambien acaba la funcion y pierdes el juego
 
@@ -227,8 +223,7 @@ def jugar(adivinar, categoria):
         if guiones == 0: 
           ganar()
           break
-        print("")
-        #Aqui empieza a pedirnos letras
+        print()
         tu_letra = input("Introduce tu letra: ").upper()
         if tu_letra == "SALIR":
           dibujo.muerte()
