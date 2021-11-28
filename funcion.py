@@ -1,8 +1,8 @@
 import os  #Funciones del sistema operativo
 import platform  #Funciones para averiguar cosas sobre la plataforma
-from random import choice as r  #Funcion para escoger una variable aleatoria de una lista
+from random import choice as R  #Funcion para escoger una variable aleatoria de una lista
 from time import sleep  #Funcion de aparicion del hilo de consola en un tiempo determinado
-import categoria
+import categoria as C
 import dibujo as D
 
 
@@ -16,7 +16,6 @@ def limpiar_consola():
         os.system("cls")
     else:
         os.system("clear")
-
 
 def letra_repetida(letra, lista):
     """
@@ -86,7 +85,7 @@ def consejos():
   """
     print("Consejo para tu vida:")
     print("------------------------\n")
-    print(f"✩ {r(categoria.consejos)} ✩")
+    print(f"✩ {R(C.consejos)} ✩")
     print("\n")
 
 
@@ -169,6 +168,7 @@ def jugar(adivinar, categoria):
     errores = []
     letras_ingresadas = ""
     while intentos < 6:
+
         interfaz(intentos, errores, categoria)
         guiones = imprimir_guiones(adivinar, letras_ingresadas)
 
@@ -179,7 +179,7 @@ def jugar(adivinar, categoria):
         if tu_letra == "SALIR":
             return D.muerte()
 
-        if validacion_de_reglas(tu_letra, letras_ingresadas):
+        elif validacion_de_reglas(tu_letra, letras_ingresadas):
 
             if tu_letra not in adivinar:
                 letras_ingresadas += tu_letra
@@ -232,31 +232,31 @@ def opcion1():
     if opcion == "1":
         limpiar_consola()
         D.a_jugar()
-        jugar(r(categoria.peliculas_mas_vistas), "Peliculas Famosas")
+        jugar(R(C.peliculas_mas_vistas), "Peliculas Famosas")
 
     elif opcion == "2":
         limpiar_consola()
         D.a_jugar()
-        jugar(r(categoria.videos_juegos), "Videojuegos")
+        jugar(R(C.videos_juegos), "Videojuegos")
 
     elif opcion == "3":
         limpiar_consola()
         D.a_jugar()
-        jugar(r(categoria.frases_de_disney), "Frases de Disney")
+        jugar(R(C.frases_de_disney), "Frases de Disney")
 
     elif opcion == "4":
         limpiar_consola()
         D.a_jugar()
-        jugar(r(categoria.deportes), "Deportes")
+        jugar(R(C.deportes), "Deportes")
 
     elif opcion == "5":
         D.a_jugar()
-        jugar(r(categoria.mujeres_historicas), "Mujeres Historicas")
+        jugar(R(C.mujeres_historicas), "Mujeres Historicas")
 
     elif opcion == "6":
         limpiar_consola()
         D.a_jugar()
-        jugar(r(categoria.refranes), "Refranes")
+        jugar(R(C.refranes), "Refranes")
     elif opcion == "REGLAS":
         limpiar_consola()
         D.reglas()

@@ -9,7 +9,7 @@ def menu_utec():
   seleccione la categoría o regrese al menú anterior. 
   Retorna la opcion ingresada.
  """
-
+  F.limpiar_consola()
   print("""
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  
 █  ▄  ▄ ▄▄▄ ▄▄▄ ▄▄▄   ▄▄▄  ▄▄▄ ▄▄ ▄▄ ▄▄▄ ▄▄▄  █ 
@@ -101,7 +101,6 @@ def introduccion():
   sleep(0.7)
   F.limpiar_consola()
   ahorcadooo()
-
 
 def a_jugar():
     """
@@ -245,7 +244,6 @@ def proximamente():
     print('''      ╚╝ ''', end="")
     print('''      ╚╝ ''')
 
-
 def despedida():
     """
     Dibuja en pantalla un muñeco escapando de un cocodrilo despidiendose.
@@ -307,7 +305,6 @@ def error(opcion):
 ║ Por favor solo ingresa LETRAS ¯\_(ツ)_/¯ ║ 
 ╚══════════════════════════════════════════╝
   ''')
-
 
 def imprimir_ahorcado(errores):
     """
