@@ -16,6 +16,8 @@ def UTEC_GAMES():
         UTEC_GAMES()
     elif Opcion_de_Menu == "4":
         OP.opcion4()
+    elif Opcion_de_Menu == "5":
+        OP.opcion5()
     else:
         D.error(1)
         UTEC_GAMES()
