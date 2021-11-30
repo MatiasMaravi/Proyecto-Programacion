@@ -22,8 +22,10 @@ Seleccione una categoría:
 ══════════════════════════
 
 1. Juego del ahorcado
-2. Otros juegos
-3. Salir 
+2. Mad Story
+3. Otros juegos
+4. Leaderboard
+5. Salir 
   """)
   opcion = str(input("Ingrese una Opcion --→ "))
   return opcion
@@ -53,6 +55,7 @@ def menu_ahorcado():
  4. Deportes 
  5. Mujeres Historicas  
  6. Refranes 
+ 7. Regresar a la sala principal
 
  (Si quieres ver las reglas del juego ingresa "reglas")
   """)

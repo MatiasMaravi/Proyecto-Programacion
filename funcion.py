@@ -145,9 +145,12 @@ def validacion_de_reglas(tu_letra, letras_ingresadas):
         return True
 
 def puntaje(nombre,intentos):
-  puntos = {0:60,1:50,2:40,3:30,4:20,5:10,6:0}
+
+  puntos = {0:60, 1:50, 2:40, 3:30, 4:20, 5:10, 6:0}
+
   with open('leaderboard.json','r') as jsonfile:
     json_content = json.load(jsonfile) 
+
     if nombre not in json_content.keys():
       json_content[nombre] = puntos[intentos]
     else:

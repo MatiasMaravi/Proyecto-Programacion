@@ -2,8 +2,10 @@ import funcion as F
 import dibujo as D
 import categoria as C
 from random import choice as R
-
 from time import sleep
+
+from main import UTEC_GAMES 
+
 def opcion1():
     """
   Trabaja con el módulo "dibujo" y con las función "Menu_El_Ahorcado" y 
@@ -41,6 +43,10 @@ def opcion1():
         F.limpiar_consola()
         nombre = D.a_jugar()
         F.jugar(R(C.refranes), "Refranes",nombre)
+    elif opcion == "7":
+        F.limpiar_consola()
+        UTEC_GAMES()
+
     elif opcion == "REGLAS":
         F.limpiar_consola()
         D.reglas()
@@ -52,6 +58,9 @@ def opcion1():
 
 
 def opcion2():
+  print("FALTAAAAA")
+
+def opcion3():
     """
   Trabaja con el módulo "dibujo".
   Limpia la consola e imprime en pantalla "proximamente" y una pequeña animación.
@@ -62,8 +71,10 @@ def opcion2():
     sleep(2)
     F.limpiar_consola()
 
+def opcion4():
+  print("*** Clasificaciones***")
 
-def opcion3():
+def opcion5():
     """
   Trabaja con el módulo "dibujo".
   Limpia la consola e imprime en pantalla un mensaje de despedida con un dibujo.
@@ -71,3 +82,8 @@ def opcion3():
     F.limpiar_consola()
     print("Adiós!!")
     D.despedida()
+
+
+
+
+  

@@ -3,24 +3,24 @@ import dibujo as D
 import opciones as OP
 
 
-def main():
+def UTEC_GAMES():
     Opcion_de_Menu = D.menu_utec()
     if Opcion_de_Menu == "1":
         D.introduccion()
         OP.opcion1()
-        F.volver_sala(main)
+        F.volver_sala(UTEC_GAMES)
     elif Opcion_de_Menu == "2":
         OP.opcion2()
-        main()
     elif Opcion_de_Menu == "3":
         OP.opcion3()
+        UTEC_GAMES()
+    elif Opcion_de_Menu == "4":
+        OP.opcion4()
     else:
         D.error(1)
-        main()
+        UTEC_GAMES()
 
-main()
+if __name__ == "__main__":
+  UTEC_GAMES()
 
 
-
-
-  
