@@ -130,6 +130,11 @@ def a_jugar():
     sleep(0.5)
     F.limpiar_consola()
 
+
+    nombre = input("Ingrese su nombre: ").upper()
+
+    return nombre.replace(" ", "")
+
 def reglas():
   """
   Imprimira las reglas en pantalla y pedira al usuario que ingrese alguna 

@@ -4,7 +4,7 @@ from random import choice as R  #Funcion para escoger una variable aleatoria de 
 from time import sleep  #Funcion de aparicion del hilo de consola en un tiempo determinado
 import categoria as C
 import dibujo as D
-
+import json
 
 def limpiar_consola():
     """
@@ -62,19 +62,6 @@ def imprimir_guiones(adivinar, letras_ingresadas):
     return guiones
 
 
-def perder(adivinar):
-    """
-    La funcion recibe como parametro la palabra a adivinar y la muestra luego
-    de imprimir un mensaje de derrota y mostrar al muñeco
-    ahorcado. 
-    Pedira al usuario que ingrese alguna tecla para continuar
-    """
-    D.ahorcadooo()
-    print("Intentos agotados, perdiste el juego\n")
-    print(f"La palabra era '{adivinar}'")
-    D.imprimir_ahorcado(6)
-    input("\nIngresa cualquier tecla para continuar: ")
-    limpiar_consola()
 
 
 def consejos():
@@ -89,7 +76,7 @@ def consejos():
     print("\n")
 
 
-def ganar():
+def ganar(nombre):
     """
     La funcion imprime un mensaje de victoria y muestra al muñeco
     escapando del juego. 
@@ -97,11 +84,25 @@ def ganar():
     """
     limpiar_consola()
     print("")
-    print("GANASTE!!!", end="")
+    print(f"{nombre} GANASTE!!!", end="")
     D.salvado()
-    print("Completaste la frase, felicidades!!\n")
+    print("Completaste la frase, felicidades!!!\n")
     consejos()
     input("Ingresa cualquier tecla para continuar: ")
+    limpiar_consola()
+
+def perder(adivinar,nombre):
+    """
+    La funcion recibe como parametro la palabra a adivinar y la muestra luego
+    de imprimir un mensaje de derrota y mostrar al muñeco
+    ahorcado. 
+    Pedira al usuario que ingrese alguna tecla para continuar
+    """
+    D.ahorcadooo()
+    print(f"Intentos agotados, perdiste el juego {nombre}\n")
+    print(f"La palabra era '{adivinar}'")
+    D.imprimir_ahorcado(6)
+    input("\nIngresa cualquier tecla para continuar: ")
     limpiar_consola()
 
 
@@ -143,8 +144,20 @@ def validacion_de_reglas(tu_letra, letras_ingresadas):
     else:
         return True
 
+def puntaje(nombre,intentos):
+  puntos = {0:60,1:50,2:40,3:30,4:20,5:10,6:0}
+  with open('leaderboard.json','r') as jsonfile:
+    json_content = json.load(jsonfile) 
+    if nombre not in json_content.keys():
+      json_content[nombre] = puntos[intentos]
+    else:
+      json_content[nombre] += puntos[intentos]
 
-def jugar(adivinar, categoria):
+  with open('leaderboard.json','w') as jsonfile:
+      json.dump(json_content, jsonfile, indent=4) 
+
+
+def jugar(adivinar, categoria,nombre):
     """
   Trabaja con el módulo "dibujo"
 
@@ -173,7 +186,8 @@ def jugar(adivinar, categoria):
         guiones = imprimir_guiones(adivinar, letras_ingresadas)
 
         if guiones == 0:
-            return ganar()
+            puntaje(nombre,intentos)
+            return ganar(nombre)
 
         tu_letra = input("\nIntroduce tu letra: ").upper()
         if tu_letra == "SALIR":
@@ -190,8 +204,8 @@ def jugar(adivinar, categoria):
             else:
                 limpiar_consola()
                 letras_ingresadas += tu_letra
-
-    return perder(adivinar)
+    puntaje(nombre,intentos)
+    return perder(adivinar,nombre)
 
 
 def volver_sala(funcion):
@@ -219,71 +233,3 @@ def volver_sala(funcion):
         sleep(2)
         limpiar_consola()
         volver_sala(funcion)
-
-
-def opcion1():
-    """
-  Trabaja con el módulo "dibujo" y con las función "Menu_El_Ahorcado" y 
-  la función "error".
-  Pide al usuario escoger cualquiera de las categorias disponibles.
-  Si ingresas una opcion inválida se ejecutara nuevamente la función.
-  """
-    opcion = D.menu_ahorcado()
-    if opcion == "1":
-        limpiar_consola()
-        D.a_jugar()
-        jugar(R(C.peliculas_mas_vistas), "Peliculas Famosas")
-
-    elif opcion == "2":
-        limpiar_consola()
-        D.a_jugar()
-        jugar(R(C.videos_juegos), "Videojuegos")
-
-    elif opcion == "3":
-        limpiar_consola()
-        D.a_jugar()
-        jugar(R(C.frases_de_disney), "Frases de Disney")
-
-    elif opcion == "4":
-        limpiar_consola()
-        D.a_jugar()
-        jugar(R(C.deportes), "Deportes")
-
-    elif opcion == "5":
-        D.a_jugar()
-        jugar(R(C.mujeres_historicas), "Mujeres Historicas")
-
-    elif opcion == "6":
-        limpiar_consola()
-        D.a_jugar()
-        jugar(R(C.refranes), "Refranes")
-    elif opcion == "REGLAS":
-        limpiar_consola()
-        D.reglas()
-        opcion1()
-
-    else:
-        D.error(1)
-        opcion1()
-
-
-def opcion2():
-    """
-  Trabaja con el módulo "dibujo".
-  Limpia la consola e imprime en pantalla "proximamente" y una pequeña animación.
-  """
-    limpiar_consola()
-    print("Proximamente...\n")
-    D.proximamente()
-    sleep(2)
-    limpiar_consola()
-
-
-def opcion3():
-    """
-  Trabaja con el módulo "dibujo".
-  Limpia la consola e imprime en pantalla un mensaje de despedida con un dibujo.
-  """
-    limpiar_consola()
-    print("Adiós!!")
-    D.despedida()
