@@ -6,6 +6,8 @@ import categoria as C
 import dibujo as D
 import json
 
+
+
 def limpiar_consola():
     """
   Trabaja con los módulos "platform" y "os" 
@@ -60,8 +62,6 @@ def imprimir_guiones(adivinar, letras_ingresadas):
             guiones += 1
     print("")
     return guiones
-
-
 
 
 def consejos():
@@ -148,16 +148,17 @@ def puntaje(nombre,intentos):
 
   puntos = {0:60, 1:50, 2:40, 3:30, 4:20, 5:10, 6:0}
 
-  with open('leaderboard.json','r') as jsonfile:
-    json_content = json.load(jsonfile) 
+  with open('puntajes.json','r') as archivo_json:
+    jugadores_puntos = json.load(archivo_json)
 
-    if nombre not in json_content.keys():
-      json_content[nombre] = puntos[intentos]
-    else:
-      json_content[nombre] += puntos[intentos]
+  if nombre not in jugadores_puntos.keys():
+    jugadores_puntos[nombre] = puntos[intentos]
 
-  with open('leaderboard.json','w') as jsonfile:
-      json.dump(json_content, jsonfile, indent=4) 
+  else:
+    jugadores_puntos[nombre] += puntos[intentos]
+
+  with open('puntajes.json','w') as archivo_json:
+      json.dump(jugadores_puntos, archivo_json, indent=4) 
 
 
 def jugar(adivinar, categoria,nombre):
@@ -236,3 +237,23 @@ def volver_sala(funcion):
         sleep(2)
         limpiar_consola()
         volver_sala(funcion)
+  
+
+import operator
+def ordenar_puntajes(puntajes):
+  return sorted(puntajes.items(), key=operator.itemgetter(1),  reverse=True)
+
+
+
+"""
+Titulo
+
+bla {sustantivo} bla bla bla bla bla bla bla bla bla bla bla bla bla
+bla bla bla bla bla bla bla {lugar} bla bla bla bla bla bla bla
+bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+bla bla bla {numero} bla bla bla bla {comida} bla bla bla bla bla
+bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+
+"""
+
+

@@ -3,8 +3,8 @@ import dibujo as D
 import categoria as C
 from random import choice as R
 from time import sleep
-
-from main import UTEC_GAMES 
+import json
+ 
 
 def opcion1():
     """
@@ -45,7 +45,6 @@ def opcion1():
         F.jugar(R(C.refranes), "Refranes",nombre)
     elif opcion == "7":
         F.limpiar_consola()
-        UTEC_GAMES()
 
     elif opcion == "REGLAS":
         F.limpiar_consola()
@@ -72,7 +71,17 @@ def opcion3():
     F.limpiar_consola()
 
 def opcion4():
-  print("*** Clasificaciones***")
+    F.limpiar_consola()
+    print("*** Clasificaciones***")
+    with open('puntajes.json','r') as jsonfile:
+        json_content = json.load(jsonfile) 
+        jsonfile.close()
+    nombres = F.ordenar_puntajes(json_content) #Lista de tuplas
+    lugares = len(nombres)
+    for i in range(1,lugares+1):
+        print(f"{i}. {nombres[i-1][0]} ---> {nombres[i-1][1]} puntos ")
+    input("Presione enter para regresar: ")
+
 
 def opcion5():
     """

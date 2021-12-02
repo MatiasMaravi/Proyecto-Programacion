@@ -136,7 +136,7 @@ def a_jugar():
 
     nombre = input("Ingrese su nombre: ").upper()
 
-    return nombre.replace(" ", "")
+    return nombre.strip()
 
 def reglas():
   """

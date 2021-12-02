@@ -1,31 +1,41 @@
 # Lista de Tareas pendientes:
 
-- Acabar el proyecto [✔]
-- Función para limpiar la consola [✔]
+-Hacer el juego del mad story
 
-- El programa deberá mostrar inicialmente un menú de opciones que muestre el título del programa (UTEC GAMES) y 3 opciones [✔]
-![Screenshot](imagenes/Captura_1.PNG)
+-Crear 6 historias con espacios vacios + funcion para pedir al usuario varias palabras
 
-- Función para mostrar el título del juego "El ahorcado" y un menú para que el usuario seleccione la categoría o regrese al menú anterior(mínimo 5 frases o palabras por categoría) [✔]
-![Screenshot](imagenes/Captura_2.PNG)
+- Un dibujo con prints para la parte de ingrese usuario
 
-- Función para imprimir al muñeco del ahorcado [✔]
+- Ordenar el codigo
+- Documentar codigo
 
-- Función para mostrar un tablero que le permita al usuario ir seleccionando letras y adivinando la frase [✔]
 
-- Función para que "sólo permita ingresar letras"(nada de numeros ni caracteres extraños). [✔]
-- Función para que el juego termine pasados los 6 intentos. [✔]
-- Función para mostrar las letras erroneas.[✔]
-- Función para permitir solo una letra a la vez.[✔]
-### El tablero debe mostrar estas cosas: [✔]
-1. Nombre del juego
-2. La categoria de la frase
-3. El muñeco del ahorcado
-4. La Frase a adivinar
-5. las letras incorrectas
-6. Apartado para ingresar letras
+## Cosas que le toca a cada uno
 
-### Notas:
-* El orden puede variar
-* Debemos colocar mensajes de error amigables y concretos
-![Screenshot](imagenes/Captura_3.PNG)
+Valeria: Documentar y Ordenar el codigo todo .
+
+Luis : Funcion para pedir al usuario palabras y una funcion para reemplazarlas en la historias.
+
+Cristopher : Hacer 2 historias .
+
+jhon : Hacer 2 hitoriass .
+
+Adrian : Hacer 2 historias.
+
+
+
+
+
+
+### Participacion: [✔]
+
+| Nombres | Asistencia | Aporte | Tarea |
+| ------------- | ------------- |  ------------- |
+| Matias  | X | X | |
+| Valeria  | X | X | |  
+| Cristopher| X | X | |
+| Adrian  | X |  | |
+| john  | X  | X | |
+| Luis  |  rip | rip | |
+
+
