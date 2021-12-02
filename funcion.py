@@ -76,17 +76,19 @@ def consejos():
     print("\n")
 
 
-def ganar(nombre):
+def ganar(nombre,intentos):
     """
     La funcion imprime un mensaje de victoria y muestra al muñeco
     escapando del juego. 
     Pedira al usuario que ingrese alguna tecla para continuar
     """
+    puntos = {0:60, 1:50, 2:40, 3:30, 4:20, 5:10, 6:0}
     limpiar_consola()
     print("")
     print(f"{nombre} GANASTE!!!", end="")
     D.salvado()
-    print("Completaste la frase, felicidades!!!\n")
+    print("Completaste la frase, felicidades!!!")
+    print(f"Tu puntaje fue de {puntos[intentos]} puntos\n")
     consejos()
     input("Ingresa cualquier tecla para continuar: ")
     limpiar_consola()
@@ -161,7 +163,7 @@ def puntaje(nombre,intentos):
       json.dump(jugadores_puntos, archivo_json, indent=4) 
 
 
-def jugar(adivinar, categoria,nombre):
+def jugar(adivinar, categoria):
     """
   Trabaja con el módulo "dibujo"
 
@@ -184,6 +186,9 @@ def jugar(adivinar, categoria,nombre):
     intentos = 0
     errores = []
     letras_ingresadas = ""
+    
+    nombre = input("Ingrese su nombre: ").upper()
+    nombre.strip()
     while intentos < 6:
 
         interfaz(intentos, errores, categoria)
@@ -191,7 +196,7 @@ def jugar(adivinar, categoria,nombre):
 
         if guiones == 0:
             puntaje(nombre,intentos)
-            return ganar(nombre)
+            return ganar(nombre,intentos)
 
         tu_letra = input("\nIntroduce tu letra: ").upper()
         if tu_letra == "SALIR":

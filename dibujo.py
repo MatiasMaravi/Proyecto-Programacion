@@ -134,9 +134,6 @@ def a_jugar():
     F.limpiar_consola()
 
 
-    nombre = input("Ingrese su nombre: ").upper()
-
-    return nombre.strip()
 
 def reglas():
   """
