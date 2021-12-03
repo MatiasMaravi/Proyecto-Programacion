@@ -106,5 +106,5 @@ def UTEC_GAMES():
         D.error(1)
         UTEC_GAMES()
 
-
-UTEC_GAMES()
+if __name__ == "__main__":
+  UTEC_GAMES()
