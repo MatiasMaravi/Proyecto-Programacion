@@ -1,6 +1,8 @@
-from time import sleep
-import funcion as F
+from time import sleep #Importa una función para dormir al programa por un número de segundos.
+import funcion as F #Importa el archivo llamado función donde se encuentran todas nuestras funciones del juego.
+
 #LOGOS
+
 def menu_utec():
   """
   Dibuja el logo de "UTEC GAMES" en pantalla.
@@ -292,9 +294,9 @@ def error(opcion):
 
   elif opcion == 3:
     print('''
-╔═══════════════════════════════════════════════════════════╗ 
-║ Ya ingresaste esa LETRA, ingresa una DIFERENTE ¯\_(ツ)_/¯ ║ 
-╚═══════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════╗ 
+║ Ingresa un carácter DIFERENTE ¯\_(ツ)_/¯ ║ 
+╚══════════════════════════════════════════╝
   ''')
 
   elif opcion == 4:

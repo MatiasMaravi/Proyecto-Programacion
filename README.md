@@ -32,10 +32,8 @@ Adrian : Hacer 2 historias.
 | Nombres | Asistencia | Aporte | Tarea |
 | ------------- | ------------- |  ------------- |
 | Matias  | X | X | |
-| Valeria  | X | X | |  
-| Cristopher| X | X | |
+| Valeria  | X | X |X |  
+| Cristopher | X | X | |
 | Adrian  | X |  | |
 | john  | X  | X | |
 | Luis  |  rip | rip | |
-
-
