@@ -1,16 +1,16 @@
-import funcion as F # Importa las funciones del archivo función.se apoda F.
-import dibujo as D #Importa funciones de los dibujos.se apoda D.
-import categoria as C #Importa categorías de las opciones.se apoda C
-from random import choice as R #Importa la funcion para escoger una variable aleatoria de una lista.Se apoda R
+import funcion as F # Importa las funciones del archivo función. Se apoda F.
+import dibujo as D #Importa funciones de los dibujos. Se apoda D.
+import categoria as C #Importa categorías de las opciones. Se apoda C.
+from random import choice as R #Importa la funcion para escoger una variable aleatoria de una lista. Se apoda R.
 from time import sleep #Importa una función para dormir al programa por un número de segundos. 
 from json import load #Funcion que se utiliza para analizar una cadena JSON válida y convertirla en un diccionario de Python.
-from operator import itemgetter as ITEM 
+from operator import itemgetter as ITEM  #Importa la función para asignar indices en una lista, tupla o diccionario.
 
 def opcion_1():
     '''
     -Trabaja con el módulo "dibujo o D" y con las función "Menu_El_Ahorcado" y la función "error".
 
-    -Pide al usuario escoger cualquiera de las categorias disponibles.
+    -Esta función pide al usuario escoger cualquiera de las categorias disponibles.
   
     -Si ingresas una opcion inválida se ejecutara nuevamente la función.
     '''
@@ -53,12 +53,19 @@ def opcion_1():
         opcion_1()
 
 def opcion2():
+  """
+  -Trabaja con el módulo "dibujo o D".
+
+  -Esta función limpia la consola y presenta el menú del juego Mad Story { aun falta contenido }
+  """
+  D.introduccion_madstory()
   print("FALTAAAAA")
 
 def opcion3():
     """
-    -Trabaja con el módulo "dibujo".
-    -Limpia la consola e imprime en pantalla "proximamente" y una pequeña animación.
+    -Trabaja con el módulo "dibujo o D".
+
+    -Esta función limpia la consola e imprime en pantalla "proximamente" y una pequeña animación.
   """
     F.limpiar_consola()
     print("Proximamente...\n")
@@ -67,6 +74,13 @@ def opcion3():
     F.limpiar_consola()
 
 def opcion4():
+    """
+    -Trabaja con el módulo "funcion o F"
+    
+    -Esta función limpia la consola y muestra los puntajes recopilados de cada usuario en una lista de clasificaciones leidos del archivo "puntajes.json" actualizado.
+
+    -Pedira al usuario que presione Enter para salir y se limpiará la consola.
+    """
     F.limpiar_consola()
     print("*** Clasificaciones***")
     with open('puntajes.json','r') as jsonfile:
@@ -83,8 +97,8 @@ def opcion4():
 
 def opcion5():
     """
-  Trabaja con el módulo "dibujo".
-  Limpia la consola e imprime en pantalla un mensaje de despedida con un dibujo.
+  Trabaja con el módulo "dibujo o D".
+  Esta función Limpia la consola e imprime en pantalla un mensaje de despedida con un dibujo.
   """
     F.limpiar_consola()
     print("Adiós!!")
@@ -94,7 +108,8 @@ def opcion5():
 def UTEC_GAMES():
     '''
     -Trabaja con la función "menu_utec" del módulo "dibujo"
-    -si la opción del menú es igual a 1 va a imprimir la función "introduccion" del módulo dibujo o D luego si ingresa la opción 2, 3, 4 o 5 va a ejecutar las funciones correspondientes y en caso ingrese otro caracter va a imprimirla función error del módulo "dibujo o D".
+    
+    -Esta función valida si la opción del menú es igual a 1 e imprime la introducción, si ingresara la opción 2, 3, 4 o 5 va a ejecutar las funciones correspondientes y en caso ingrese otro caracter va a imprimir un error.
 
     '''
     Opcion_de_Menu = D.menu_utec()
@@ -114,6 +129,7 @@ def UTEC_GAMES():
     else:
         D.error(1)
         UTEC_GAMES()
-
+"""
 if __name__ == "__main__":
   UTEC_GAMES()
+"""

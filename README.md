@@ -1,13 +1,13 @@
 # Lista de Tareas pendientes:
 
--Hacer el juego del mad story
+- Hacer el juego del Mad Story
 
--Crear 6 historias con espacios vacios + funcion para pedir al usuario varias palabras
+- Crear 6 historias con espacios vacios + funcion para pedir al usuario varias palabras
 
 - Un dibujo con prints para la parte de ingrese usuario
 
 - Ordenar el codigo
-- Documentar codigo
+- Documentar el codigo
 
 
 ## Cosas que le toca a cada uno
@@ -31,9 +31,9 @@ Adrian : Hacer 2 historias.
 
 | Nombres | Asistencia | Aporte | Tarea |
 | ------------- | ------------- |  ------------- |
-| Matias  | X | X | |
-| Valeria  | X | X |X |  
-| Cristopher | X | X | |
-| Adrian  | X |  | |
+| Matias  | X | X | X |
+| Valeria  | X | X | X |  
+| Cristopher | X |X  | |
+| Adrian  | X |  |  |
 | john  | X  | X | |
 | Luis  |  rip | rip | |

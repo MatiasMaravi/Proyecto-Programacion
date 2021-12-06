@@ -7,7 +7,7 @@ def menu_utec():
   """
   Dibuja el logo de "UTEC GAMES" en pantalla.
  
-  Esta Función mostrara el título del juego "UTEC GAMES" y un menú para que el usuario 
+  Esta Función mostrará el título del juego "UTEC GAMES" y un menú para que el usuario 
   seleccione la categoría o regrese al menú anterior. 
   Retorna la opcion ingresada.
  """
@@ -268,7 +268,7 @@ def despedida():
 def error(opcion):
   """
   La funcion recibe como parametro la opcion a pintar en pantalla.
-  las opciones disponibles son:
+  Las opciones disponibles son:
   1. "Ingresar opcion valida"
   2. "Solo responder 'si' o 'no'
   3. "No repetir letras"
@@ -394,3 +394,31 @@ def imprimir_ahorcado(errores):
     █  / \   |  █
     █        |  █
     █▄▄▄▄▄▄▄▄▄▄▄█''')
+
+
+def introduccion_madstory():
+  """
+  Trabaja con la función "sleep" del módulo "time".
+  Dibuja en pantalla la animación del título del juego "Mad Story".
+  """
+  F.limpiar_consola()
+  sleep(0.25)
+  print('''\n    ██▄▄██  █▀▀▀█  █▀▀▀▄''')
+  sleep(0.1)
+  print('''    █ ▀▀ █  █▄▄▄█  █   █''')
+  sleep(0.1)
+  print('''    █    █  █   █  █▄▄▄▀
+  ════════════════════════\n''')
+
+  sleep(0.3)
+
+  print('''                           █▀▀▀▀  █████  █████  █▀▀▀█  █   █''')
+  sleep(0.1)
+  print('''                           █▄▄      █    █   █  █▄▄▄█  ▀▄▄▄▀''')
+  sleep(0.1)
+  print('''                             ▀▀█    █    █   █  █ ▀▄     █''')
+  sleep(0.1)
+  print('''                           ▄▄▄▄█    █    █████  █   █    █
+                      ═════════════════════════════════════\n''')
+  sleep(0.75)
+  F.limpiar_consola()

@@ -1,5 +1,29 @@
 {
   "files": {
+    "funcion.py": [
+      {
+        "id": "d40bbfdd-7351-4320-a966-3630acd72ab7",
+        "line": 88,
+        "version": 26483,
+        "index": 2440
+      }
+    ],
+    "historias/cuento1.txt": [
+      {
+        "id": "dedab425-48d1-49ea-af48-76db70fdc431",
+        "line": 1,
+        "version": 165,
+        "index": 0
+      }
+    ],
+    "historias/historia2.txt": [
+      {
+        "id": "9107ed9a-94b9-4714-85b9-874994bf186a",
+        "line": 1,
+        "version": 1502,
+        "index": 0
+      }
+    ],
     "otro.py": [
       {
         "id": "960735da-c784-481f-9fd7-e4184fa1639d",
