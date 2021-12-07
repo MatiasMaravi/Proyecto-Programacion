@@ -200,7 +200,6 @@ def puntaje(nombre,intentos):
   -La función abre un arhivo llamado "puntajes.json" que se apodará "archivo_json" y si el nombre del jugador no está en el "archivo_json" entonces se va a integrar al archivo json, y los puntos obtenidos por sus intentos.
 
   -La función abrirá el "archivo_json" lo convertirá de python a json y lo cerrará con los datos actualizados.
-
   '''
   puntos = {0:60, 1:50, 2:40, 3:30, 4:20, 5:10, 6:0}
 
@@ -255,6 +254,7 @@ def jugar(adivinar, categoria):
                 errores.append(tu_letra)
                 intentos += 1
 
+    puntaje(nombre,intentos)
     return perder(adivinar,nombre)
 
 
@@ -285,5 +285,3 @@ def volver_sala(funcion):
         sleep(2)
         limpiar_consola()
         volver_sala(funcion)
-
-

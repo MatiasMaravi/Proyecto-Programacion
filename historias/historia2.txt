@@ -1,1 +1,9 @@
-Había una vez, un ("lugar") del Reino de ("ciudad_del_Perú"), donde la cabeza central era los reyes, quienes son los padres de una princesa llamada ("nombre_madre"), los padres eran muy ocupados todo el ("estacion_del_año") y no le tomaba atención a la princesa. Ellos ("verbo1") sobre una fosa profunda que se encuentra en la ciudad. ("Numero_del_1-20"). Ella quiere salir por su cuenta, pero los guardias no lo permitían, pero ("nombre_mascota"), un amigo del Rey, los dijo que fue una orden del Rey. Mas tarde, ellos llegaron a la fosa, pero un misterioso sonido se escucha, y de allí salió/salieron ("numero_de_1-20") ("animal") y ellos se asustan y deciden alejarse, hasta que su madre, que salia de su ("establecimiento") regresó y la encontró. la princesa le cuenta del problema que siente ella estando ("adjetivo1"), pero su madre le explicó que esa fosa era una sorpresa de ella para su ("festividad_del_Perú"). La madre dijo que siempre estará al cuidado de su hija y que nunca le dejarán ("adjetivo1").
+Había una vez, un /establecimiento/ del Reino de /ciudad_del_peru/ , donde la cabeza central era los reyes, quienes son los padres de una princesa llamada /nombre_madre/ , los padres eran muy ocupados todo el/la /estacion_del_año/ y no le tomaba atención a la princesa. Ellos indagan sobre una fosa profunda que se encuentra en la ciudad. Ella quiere salir por su cuenta, pero los guardias no lo permitían, pero /nombre_mascota/ , un amigo del Rey, los dijo que fue una orden del Rey. Mas tarde, ellos llegaron a la fosa, pero un misterioso sonido se escucha, y de allí salieron un/una /animal_salvaje/ y ellos se asustan y deciden alejarse, hasta que su madre, que salia de su /establecimiento/ regresó y la encontró. la princesa le cuenta del problema que siente ella, pero su madre le explicó que esa fosa era una sorpresa de ella para su /festividad_del_peru/ . La madre dijo que siempre estará al cuidado de su hija y que nunca le dejarán sola.
+
+/nombre_madre/
+/nombre_mascota/
+/estacion_del_año/
+/festividad_del_peru/
+/establecimiento/
+/animal_salvaje/
+/ciudad_del_peru/

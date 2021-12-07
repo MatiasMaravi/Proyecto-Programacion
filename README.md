@@ -34,6 +34,6 @@ Adrian : Hacer 2 historias.
 | Matias  | X | X | X |
 | Valeria  | X | X | X |  
 | Cristopher | X |X  | |
-| Adrian  | X |  |  |
+| Adrian  | X | X | x |
 | john  | X  | X | |
 | Luis  |  rip | rip | |

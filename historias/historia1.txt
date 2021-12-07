@@ -1,14 +1,14 @@
-("tu_nombre") y ("cantante_masculino") eran dos pequeños hermanos(as) que vivían con su abuelo ("nombre_padre") y con su ("animal_mascota") llamado ("villano_pelicula") en una caseta pobre. El abuelo siempre levantaba a sus dos nietos desde las ("numero_de_1-20") hrs. a un ("establecimiento") antes de la estadía de la policía, para que trajeran ("alimento") para el/la("animal_mascota"). Un día, ("tu_nombre") se cortó el/la ("parte_del_cuerpo") con un vidrio cuando regresaba trayendo el/la ("alimento"), por lo que ("cantante_masculino") trabajaría el doble de tiempo por su hermano/a. Él/Ella trajo un ("animal_salvaje") y Le convenció al abuelo al decirle que ahorraría mas tiempo por su olfato y al final el abuelo lo aceptó.  Al volver, el abuelo mató al ("animal_salvaje") para satisfacer a su ("animal_mascota"), y ("tu_nombre") lloró y lo enfrentó. Él empujó la ("parte_del_cuerpo") de palo de su abuelo con una ("objeto_deportivo"), y este se resbaló y se cayó de espaldas al chiquero. ("tu_nombre") y ("cantante_masculino") huyeron rápidamente y el abuelo sería devorado por el ("animal_mascota") por su cojera.
+/tu_nombre/ y /cantante_masculino/ eran dos pequeños hermanos/as/ que vivían con su abuelo /nombre_padre/ y con su /animal_mascota/ llamado /villano_pelicula/ en una caseta pobre. El abuelo siempre levantaba a sus dos nietos desde las /numero_de_1-20/ hrs. a un /establecimiento/ antes de la estadía de la policía, para que trajeran /alimento/ para el/la /animal_mascota/ . Un día, Pablo se cortó el/la /parte_del_cuerpo/ con un vidrio cuando regresaba trayendo el/la /alimento/ , por lo que /cantante_masculino/ trabajaría el doble de tiempo por su hermano/a. Él/Ella trajo un /animal_salvaje/ y Le convenció al abuelo al decirle que ahorraría mas tiempo por su olfato y al final el abuelo lo aceptó.  Al volver, el abuelo mató al /animal_salvaje/ para satisfacer a su /animal_mascota/ , y Pablo lloró y lo enfrentó. Él empujó la /parte_del_cuerpo/ de palo de su abuelo con una /objeto_deportivo/ , y este se resbaló y se cayó de espaldas al chiquero. Pablo y /cantante_masculino/ huyeron rápidamente y el abuelo sería devorado por el /animal_mascota/ por su cojera.
 
-("tu_nombre")
-("cantante_masculino")
-("nombre_padre")
-("animal_mascota") 
-("villano_pelicula")
-("numero_de_1-20")
-("establecimiento")
-("alimento")
-("parte_del_cuerpo")
-("animal_salvaje")
-("objeto_deportivo")
+/"tu_nombre"/
+/"cantante_masculino"/
+/"nombre_padre"/
+/"animal_mascota"/ 
+/"villano_pelicula"/
+/"numero_de_1-20"/
+/"establecimiento"/
+/"alimento"/
+/"parte_del_cuerpo"/
+/"animal_salvaje"/
+/"objeto_deportivo"/
 
