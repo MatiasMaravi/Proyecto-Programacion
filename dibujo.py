@@ -34,7 +34,7 @@ Seleccione una categoría:
 
 def menu_ahorcado():
   """
-  Dibuja el logo de "UTEC GAMES" en pantalla.
+  Dibuja el logo de "AHORCADO" en pantalla.
      
   Esta función limpia la consola y muestra el título del juego "El ahorcado", 
   además muestra un menú para que el usuario seleccione la categoría o regrese al menú anterior.
@@ -253,6 +253,8 @@ def proximamente():
 
 def despedida():
     """
+    Es la ultima función que ejecutaría el programa.
+
     Dibuja en pantalla un muñeco escapando de un cocodrilo despidiendose.
     """
     print('''
@@ -399,7 +401,7 @@ def imprimir_ahorcado(errores):
 def introduccion_madstory():
   """
   Trabaja con la función "sleep" del módulo "time".
-  Dibuja en pantalla la animación del título del juego "Mad Story".
+  Dibuja en pantalla la animación del título de "Mad Story".
   """
   F.limpiar_consola()
   sleep(0.25)
@@ -422,3 +424,44 @@ def introduccion_madstory():
                       ═════════════════════════════════════\n''')
   sleep(0.75)
   F.limpiar_consola()
+
+def pedir_nombre():
+  """
+  Esta función pedira al usuario ingresar su nombre, junto con la imagen de un perrito con sombrero.
+  """
+  nombre = input("""
+                       __
+                     .'  '.
+                 _.-'/  |  \_._
+                °--------------°
+              ,_ -,|  /  0 `-.
+    |\    .-"       `--""-.__.'=====================-,
+    \ '-'`        .___.--._)=========================|
+     \            .'      |                          |
+      |     /,_.-'        |                          |
+    _/   _.'(             |    ¡Ingresa tu Nombre!   |
+   /  ,-' \  \            |                          |
+   \  \    `-'            |                          |
+    `-'                   '--------------------------'             
+  """)
+  return nombre
+
+def menu_mad_story():
+  """
+  Dibuja el logo de "UTEC GAMES" en pantalla.
+     
+  Esta función limpia la consola y muestra el título del juego "El ahorcado", 
+  además muestra un menú para que el usuario seleccione la categoría o regrese al menú anterior.
+  Retorna la categoria escogida.
+  
+  """
+  F.limpiar_consola()
+  print("""
+  ▄▄ ▄▄ ▄▄▄ ▄▄▄    ▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄▄ ▄ ▄
+  █ █ █ █▄█ █  █   █▄▄  █  █ █ █▄▄▀ █▄█
+  █   █ █ █ █▄▄▀   ▄▄█  █  █▄█ █ ▀▄  █
+  ══════════════════════════════════════
+  Bienvenidos a mad story!. 
+ A continuacion tienes que reponder unas preguntas:
+
+  """)

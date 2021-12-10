@@ -24,16 +24,14 @@ Adrian : Hacer 2 historias.
 
 
 
-
-
-
 ### Participacion: [✔]
 
 | Nombres | Asistencia | Aporte | Tarea |
 | ------------- | ------------- |  ------------- |
-| Matias  | X | X | X |
-| Valeria  | X | X | X |  
-| Cristopher | X |X  | |
-| Adrian  | X | X | x |
-| john  | X  | X | |
+| Matias  | X X| X | X |
+| Valeria  | X X | X | X |  
+| Cristopher | X X | X |X |
+| Adrian  |X X | X  | X |
+| John  | X   | X | X|
 | Luis  |  rip | rip | |
+

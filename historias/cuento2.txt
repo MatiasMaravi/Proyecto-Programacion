@@ -1,3 +1,0 @@
-Érase una vez en un país muy lejano, un {animal} llamado {Nombre_aa}. El estudiaba en la universidad {nombre_uni} y se había estado preparando arduamente para rendir un examen muy complicado de {Curso} ;el cual, finalmente tras su gran esfuerzo logró aprobar.
-
-

@@ -51,3 +51,9 @@ consejos = [
     "No olvides que el tiempo solo sana lo que ya no importa",
     "Recuerda que uno es dueño de lo que calla pero esclavo de lo que dice"
 ]
+
+historias = ["historias/historia1.txt",
+            "historias/historia2.txt",
+            "historias/historia3.txt",
+            "historias/historia4.txt",
+            "historias/historia5.txt"]

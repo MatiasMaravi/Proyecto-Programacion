@@ -4,10 +4,14 @@ import categoria as C #Importa categorías de las opciones. Se apoda C.
 from random import choice as R #Importa la funcion para escoger una variable aleatoria de una lista. Se apoda R.
 from time import sleep #Importa una función para dormir al programa por un número de segundos. 
 from json import load #Funcion que se utiliza para analizar una cadena JSON válida y convertirla en un diccionario de Python.
-from operator import itemgetter as ITEM  #Importa la función para asignar indices en una lista, tupla o diccionario.
+from operator import itemgetter   #Importa la función para asignar indices en una lista, tupla o diccionario.
+
+import historias as H #Importa las fuciones del archivo historias. Se apoda H.
 
 def opcion_1():
     '''
+    Presenta las funcionalidades del Juego del Ahorcado.
+
     -Trabaja con el módulo "dibujo o D" y con las función "Menu_El_Ahorcado" y la función "error".
 
     -Esta función pide al usuario escoger cualquiera de las categorias disponibles.
@@ -54,12 +58,35 @@ def opcion_1():
 
 def opcion2():
   """
-  -Trabaja con el módulo "dibujo o D".
+  Presenta las funcionalidades del Juego de Mad Story
+  
+  -Trabaja con los módulos "dibujo o D" y "hola".
 
-  -Esta función limpia la consola y presenta el menú del juego Mad Story { aun falta contenido }
+  -En el módulo "historias o H" pide al usuario que introduzca los datos correspondientes y que estos reemplazarán a los términos de la historia seleccionada en diccionario "valores".
+
+  { aun falta contenido }
   """
-  D.introduccion_madstory()
-  print("FALTAAAAA")
+  historia = R(C.historias)
+  if historia == "historias/historia1.txt":
+    F.limpiar_consola()
+    valores = H.historia1()
+    H.reemplazar(historia, valores)
+  elif historia == "historias/historia2.txt":
+    F.limpiar_consola()
+    valores = H.historia2()
+    H.reemplazar(historia, valores)
+  elif historia == "historias/historia3.txt":
+    F.limpiar_consola()
+    valores = H.historia3()
+    H.reemplazar(historia, valores)
+  elif historia == "historias/historia4.txt":
+    F.limpiar_consola()
+    valores = H.historia4()
+    H.reemplazar(historia, valores)
+  elif historia == "historias/historia5.txt":
+    F.limpiar_consola()
+    valores = H.historia5()
+    H.reemplazar(historia, valores)
 
 def opcion3():
     """
@@ -79,20 +106,20 @@ def opcion4():
     
     -Esta función limpia la consola y muestra los puntajes recopilados de cada usuario en una lista de clasificaciones leidos del archivo "puntajes.json" actualizado.
 
-    -Pedira al usuario que presione Enter para salir y se limpiará la consola.
+    -Pedirá al usuario que presione Enter para salir y se limpiará la consola.
     """
     F.limpiar_consola()
-    print("*** Clasificaciones***")
+    print("*** Clasificaciones***\n")
     with open('puntajes.json','r') as jsonfile:
         json_content = load(jsonfile) 
 
-    nombres = sorted(json_content.items(), key=ITEM(1),  reverse=True) #Lista de tuplas
+    nombres = sorted(json_content.items(), key=itemgetter(1),  reverse=True) #Lista de tuplas
     
     lugares = len(nombres)
     for i in range(1,lugares+1):
         print(f"{i}. {nombres[i-1][0]} ---> {nombres[i-1][1]} puntos ")
 
-    input("Presione enter para regresar: ")
+    input("\nPresione enter para regresar: ")
 
 
 def opcion5():
@@ -109,7 +136,11 @@ def UTEC_GAMES():
     '''
     -Trabaja con la función "menu_utec" del módulo "dibujo"
     
-    -Esta función valida si la opción del menú es igual a 1 e imprime la introducción, si ingresara la opción 2, 3, 4 o 5 va a ejecutar las funciones correspondientes y en caso ingrese otro caracter va a imprimir un error.
+    -Es la primera función en ejecutar el programa y nos presentan los juegos de "UTEC GAMES".
+
+    -Esta función valida a través de distintas opciones. Si la opción del menú es 1 imprime las funciones del "Juego del ahorcado" y si ingresara la opción 2 imprime las funciones del "Mad Story".
+    
+    -Las opciones 3, 4 o 5 va a ejecutar las funciones correspondientes que no son juegos y en caso ingrese otro caracter va a imprimir un error.
 
     '''
     Opcion_de_Menu = D.menu_utec()
@@ -117,6 +148,7 @@ def UTEC_GAMES():
         D.introduccion()
         opcion_1()
     elif Opcion_de_Menu == "2":
+        D.introduccion_madstory()
         opcion2()
     elif Opcion_de_Menu == "3":
         opcion3()
@@ -129,6 +161,7 @@ def UTEC_GAMES():
     else:
         D.error(1)
         UTEC_GAMES()
+
 
 if __name__ == "__main__":
   UTEC_GAMES()

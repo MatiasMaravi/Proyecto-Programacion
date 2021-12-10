@@ -232,8 +232,7 @@ def jugar(adivinar, categoria):
     intentos = 0
     errores = []
     letras_ingresadas = ""
-    
-    nombre = input("Ingrese su nombre: ").upper()
+    nombre = D.pedir_nombre().upper()
     nombre.strip()
     while intentos < 6:
 
