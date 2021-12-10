@@ -36,7 +36,6 @@ def letra_repetida(letra, lista):
     return True
 
 
-
 def validar_letras_numeros(lista):
     '''
     Parámetros:
@@ -267,7 +266,7 @@ def volver_sala(funcion):
 
     -Esta funcion pregunta al usuario si quisiera volver a la sala principal o desea salir completamente del juego y si ingresa una opción inválida mostrara un dibujo de error.
     """
-
+    limpiar_consola()
     D.volver()
     valor = input("(SI/NO) : ").upper()
     if valor == "SI":

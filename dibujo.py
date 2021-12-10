@@ -453,15 +453,27 @@ def menu_mad_story():
   Esta función limpia la consola y muestra el título del juego "El ahorcado", 
   además muestra un menú para que el usuario seleccione la categoría o regrese al menú anterior.
   Retorna la categoria escogida.
-  
   """
   F.limpiar_consola()
   print("""
-  ▄▄ ▄▄ ▄▄▄ ▄▄▄    ▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄▄ ▄ ▄
-  █ █ █ █▄█ █  █   █▄▄  █  █ █ █▄▄▀ █▄█
-  █   █ █ █ █▄▄▀   ▄▄█  █  █▄█ █ ▀▄  █
-  ══════════════════════════════════════
-  Bienvenidos a mad story!. 
- A continuacion tienes que reponder unas preguntas:
+▄▄ ▄▄ ▄▄▄ ▄▄▄    ▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄▄ ▄ ▄
+█ █ █ █▄█ █  █   █▄▄  █  █ █ █▄▄▀ █▄█
+█   █ █ █ █▄▄▀   ▄▄█  █  █▄█ █ ▀▄  █
+══════════════════════════════════════
+Bienvenidos a mad story!. 
+A continuacion tienes que responder las siguientes preguntas:
 
   """)
+
+
+def listo():
+  F.limpiar_consola()
+  print('''
+        █    █   ▄▀▀▀  ▀█▀  █▀▀█   █
+        █    █   ▀▬▬▄   █   █  █   █
+        █▄▄  █   ▄▄▄▀   █   █▄▄█   ▄
+  ''')
+  sleep(1.0)
+
+
+

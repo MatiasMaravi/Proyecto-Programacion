@@ -33,5 +33,5 @@ Adrian : Hacer 2 historias.
 | Cristopher | X X | X |X |
 | Adrian  |X X | X  | X |
 | John  | X   | X | X|
-| Luis  |  rip | rip | |
+| Luis  |  rip | rip |rip |
 

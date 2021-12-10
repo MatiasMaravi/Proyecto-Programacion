@@ -150,6 +150,7 @@ def UTEC_GAMES():
     elif Opcion_de_Menu == "2":
         D.introduccion_madstory()
         opcion2()
+        F.volver_sala(UTEC_GAMES)
     elif Opcion_de_Menu == "3":
         opcion3()
         UTEC_GAMES()
