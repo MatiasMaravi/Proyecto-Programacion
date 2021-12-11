@@ -202,14 +202,14 @@ def puntaje(nombre,intentos):
   '''
   puntos = {0:60, 1:50, 2:40, 3:30, 4:20, 5:10, 6:0}
 
-  with open('puntajes.json','r') as archivo_json:
+  with open('aqui_git_hub/Proyecto-Programacion/puntajes.json','r') as archivo_json:
     puntos_jugadores = json.load(archivo_json)
 
   if nombre not in puntos_jugadores.keys():
     puntos_jugadores[nombre] = puntos[intentos]
   else:
     puntos_jugadores[nombre] += puntos[intentos]
-  with open('puntajes.json','w') as archivo_json:
+  with open('aqui_git_hub/Proyecto-Programacion/puntajes.json','w') as archivo_json:
       json.dump(puntos_jugadores, archivo_json, indent=4) 
 
 
@@ -232,7 +232,7 @@ def jugar(adivinar, categoria):
     errores = []
     letras_ingresadas = ""
     nombre = D.pedir_nombre().upper()
-    nombre.strip()
+    nombre = nombre.replace(" ","")
     while intentos < 6:
 
         interfaz(intentos, errores, categoria)

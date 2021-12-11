@@ -3,9 +3,8 @@ import dibujo as D #Importa funciones de los dibujos. Se apoda D.
 import categoria as C #Importa categorías de las opciones. Se apoda C.
 from random import choice as R #Importa la funcion para escoger una variable aleatoria de una lista. Se apoda R.
 from time import sleep #Importa una función para dormir al programa por un número de segundos. 
-from json import load #Funcion que se utiliza para analizar una cadena JSON válida y convertirla en un diccionario de Python.
 from operator import itemgetter   #Importa la función para asignar indices en una lista, tupla o diccionario.
-
+import json
 import historias as H #Importa las fuciones del archivo historias. Se apoda H.
 
 def opcion_1():
@@ -109,9 +108,9 @@ def opcion4():
     -Pedirá al usuario que presione Enter para salir y se limpiará la consola.
     """
     F.limpiar_consola()
-    print("*** Clasificaciones***\n")
-    with open('puntajes.json','r') as jsonfile:
-        json_content = load(jsonfile) 
+    D.clasificaciones()
+    with open('aqui_git_hub/Proyecto-Programacion/puntajes.json','r') as jsonfile:
+        json_content = json.load(jsonfile) 
 
     nombres = sorted(json_content.items(), key=itemgetter(1),  reverse=True) #Lista de tuplas
     
