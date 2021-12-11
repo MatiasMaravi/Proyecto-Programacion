@@ -109,7 +109,7 @@ def opcion4():
     """
     F.limpiar_consola()
     D.clasificaciones()
-    with open('aqui_git_hub/Proyecto-Programacion/puntajes.json','r') as jsonfile:
+    with open('historias/puntajes.json','r') as jsonfile:
         json_content = json.load(jsonfile) 
 
     nombres = sorted(json_content.items(), key=itemgetter(1),  reverse=True) #Lista de tuplas

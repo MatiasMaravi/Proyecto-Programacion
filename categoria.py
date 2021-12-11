@@ -5,7 +5,7 @@ frases_de_disney = [
 ]
 
 videos_juegos = [
-    "Minecraft", "Valorant", "Counter Strike", "Super mario bros", "Among Us"
+    "Minecraft", "Valorant", "Counter Strike", "Super mario bros", "Among Us", "Dota 2", "Left 4 dead 2"
 ]
 
 peliculas_mas_vistas = [
