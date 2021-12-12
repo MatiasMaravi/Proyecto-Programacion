@@ -1,3 +1,7 @@
-Había una vez un niño llamado /Nombre_Niño/ que estudiaba en el colegio /nombre_colegio/ . Él se encontraba cursando la matería de /nombre_curso/ , y estaba muy preocupado porque no estaba seguro de si iba a pasar la evaluación. Así que, como medida desesperada prepara un ritual mágico llamado /nombre_truco/ para que el examen no ocurra ese día ... Llego el día del examen cuando de repente ocurrió un /fenomeno_natural/ y el aula se volvió una locura, en ese momento de caos los alumnos y maestros tuvieron que evacuar y el examen se suspendio hasta el año /año/ . Debido a ello tuvo más tiempo y gracias al destino y su esfuerzo aprobó el examen.
+Habia una vez un ninio llamado /Nombre_Niño/ que estudiaba en el colegio /nombre_colegio/.
+El se encontraba cursando la materia de /nombre_curso/, y estaba muy preocupado porque no estaba seguro de si iba a pasar la evaluacion.
+Asi que, como medida desesperada prepara un ritual magico llamado /nombre_truco/ para que el examen no ocurra ese dia... 
+Llego el dia del examen cuando de repente ocurrio un /fenomeno_natural/ y el aula se volvio una locura, en ese momento de caos los alumnos y maestros tuvieron que evacuar y el examen se suspendio hasta el anio /año/.
+Debido a ello tuvo mas tiempo y gracias al destino y su esfuerzo aprobo el examen.
 
 Wow que divertido XD
