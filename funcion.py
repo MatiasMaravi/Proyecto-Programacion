@@ -23,9 +23,9 @@ def letra_repetida(letra, lista):
     """
     Parametros:
 
-    -letra --> valor que vas a ver si se repite en una lista
+        -letra --> valor que vas a ver si se repite en una lista
 
-    -lista --> lista de valores 
+        -lista --> lista de valores 
 
     -La funcion compara si la letra que ingresamos se encuentra en la lista y retorna "False" de ser el caso.
     -En caso la letra no se encuentre en la lista retorna "True"
@@ -36,19 +36,17 @@ def letra_repetida(letra, lista):
     return True
 
 
-def validar_letras_numeros(lista):
+def validar_letras_numeros(letra):
     '''
     Parámetros:
 
-    -lista --> lista de valores
+        -letra --> caracter ingresado por el usuario
 
-    -Esta función examina que letra se encuentre en la lista.
-
-    -Esta función reconoce si el valor ingresado es una letra o número. Caso contrario retornara False.  
+    -Esta función valida si el valor ingresado es una letra o número. Si es alguno de estos
+    retornara True. Caso contrario retornara False  
     '''
-    for letra in lista:
-        if letra not in "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789":
-            return False
+    if letra not in "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789":
+        return False
     return True
 
 
@@ -56,10 +54,12 @@ def imprimir_guiones(adivinar, letras_ingresadas):
     """
     Parámetros: 
 
-    -adivinar --> string de la palabra a adivinar.
-    letras_ingresadas --> string con todas las letras ingresadas por el usuario.
+        -adivinar --> string de la palabra a adivinar.
 
-    -Esta función imprime los guiones y busca coincidencias  e imprime las letras_ingresadas quitando los guiones.
+        -letras_ingresadas --> string con todas las letras ingresadas por el usuario.
+
+    -Esta función imprime los guiones si no encuentra una letra coincidente en "letras ingresadas"
+    con el string "adivinar".
     """
     guiones = 0
     for letra in adivinar:
@@ -88,11 +88,12 @@ def ganar(nombre,intentos):
     """
     Parámetros: 
 
-    -nombre --> se almacena el nombre del jugador
+        -nombre --> se almacena el nombre del jugador
 
-    -intentos --> se almacena el número de errores
+        -intentos --> se almacena el número de errores
 
-    -La funcion imprime un mensaje de victoria y el nombre del juegador cuando gana, luego su puntaje de acuerdo al número de errores y además muestra al muñeco escapando del juego y finalmente un consejo para tu vida.
+    -La funcion imprime un mensaje de victoria y el nombre del juegador cuando gana, 
+    luego su puntaje de acuerdo al número de errores y además muestra al muñeco escapando del juego y finalmente un consejo para tu vida.
 
     -Pedira al usuario que ingrese alguna tecla para continuar y limpiará la consola.
     """
@@ -111,12 +112,12 @@ def ganar(nombre,intentos):
 def perder(adivinar,nombre):
     """
     Parámetros: 
+        -adivinar --> contiene la palabra o frase de la categoría elegida.
 
-    -adivinar --> contiene el nombre de la categoría elegida.
-
-    -nombre--> contiene el nombre del jugador.
-    
-    -La función imprime el mensaje "ahorcadoo" cuando no tengamos ningún intento más luego el muñeco ahorcado por completo. 
+        -nombre--> contiene el nombre del jugador.
+    -La función imprime el mensaje "ahorcadoo" cuando no tengamos ningún intento, despues
+    mostrará el nombre del jugador y su puntaje. Por ultimo imprime al
+    muñeno ahorcado por completo. 
 
     -Pedira al usuario que ingrese alguna tecla para continuar
     """
@@ -130,16 +131,15 @@ def perder(adivinar,nombre):
 
 
 def interfaz(intentos, errores, categoria):
-    '''
+    """
     Parámetros:
 
-    -intentos --> contiene el número de intentos
-    errores --> contiene el numero de errores al ingresar mal la letra.
-
-    -Categoria --> contiene el nombre de la categoría escogida por el jugador
+        -intentos --> contiene el número de intentos.
+        -errores --> contiene la lista de letras incorrectas.
+        -Categoria --> contiene el nombre de la categoría escogida por el jugador.
 
     -La función imprime el nombre "EL JUEGO DEL AHORCADO",la categoría escogida por el jugador,los intentos y errores. Además pide al usuario introducir una letra para jugar. 
-    '''
+    """
     limpiar_consola()
     print("*** EL JUEGO DEL AHORCADO *** \n")
     print(f"Categoria: {categoria}")
@@ -157,16 +157,17 @@ def interfaz(intentos, errores, categoria):
 
 
 def validacion_de_reglas(tu_letra, letras_ingresadas):
-    '''
+    """
     Parámetros: 
 
-    -tu_letra --> contiene la letra ingresada
+        -tu_letra --> contiene la letra ingresada
     
-    -letras_ingresadas --> lista de las letras que ingresaste
+        -letras_ingresadas --> lista de las letras que ingresaste
     
-    -Lo que hace esta función es mostrar los mensaje de error dependiendo de las validaciones de las funciones.
+    -La funcion valida todas las reglas del juego del ahorcado, si no cometes ninguna 
+    infraccion retornara "True".
 
-    '''
+    """
     if letra_repetida(tu_letra, letras_ingresadas) == False:
         limpiar_consola()
         D.error(3)
@@ -190,44 +191,44 @@ def validacion_de_reglas(tu_letra, letras_ingresadas):
 
 
 def puntaje(nombre,intentos):
-  '''
-  Parámetros: 
+    """
+    Parámetros: 
 
-  -nombre -->  contien el nombre de los jugadores 
-  
-  -intentos--> contiene el número de intentos
+    -nombre -->  contien el nombre de los jugadores 
+    
+    -intentos--> contiene el número de intentos
 
-  -La función abre un arhivo llamado "puntajes.json" que se apodará "archivo_json" y si el nombre del jugador no está en el "archivo_json" entonces se va a integrar al archivo json, y los puntos obtenidos por sus intentos.
+    -La función abre un arhivo llamado "puntajes.json" que se apodará "archivo_json" y si el nombre del jugador no está en el "archivo_json" entonces se va a integrar al archivo json, y los puntos obtenidos por sus intentos.
 
-  -La función abrirá el "archivo_json" lo convertirá de python a json y lo cerrará con los datos actualizados.
-  '''
-  puntos = {0:60, 1:50, 2:40, 3:30, 4:20, 5:10, 6:0}
+    -La función abrirá el "archivo_json" lo convertirá de python a json y lo cerrará con los datos actualizados.
+    """
+    puntos = {0:60, 1:50, 2:40, 3:30, 4:20, 5:10, 6:0}
 
-  with open('historias/puntajes.json','r') as archivo_json:
-    puntos_jugadores = json.load(archivo_json)
+    with open('historias/puntajes.json','r') as archivo_json:
+        puntos_jugadores = json.load(archivo_json)
 
-  if nombre not in puntos_jugadores.keys():
-    puntos_jugadores[nombre] = puntos[intentos]
-  else:
-    puntos_jugadores[nombre] += puntos[intentos]
-  with open('historias/puntajes.json','w') as archivo_json:
-      json.dump(puntos_jugadores, archivo_json, indent=4) 
+    if nombre not in puntos_jugadores.keys():
+        puntos_jugadores[nombre] = puntos[intentos]
+    else:
+        puntos_jugadores[nombre] += puntos[intentos]
+    with open('historias/puntajes.json','w') as archivo_json:
+        json.dump(puntos_jugadores, archivo_json, indent=4) 
 
 
 def jugar(adivinar, categoria):
     """
-  Trabaja con el módulo "dibujo"
+    Trabaja con el módulo "dibujo"
 
-  Parámetros:
+    Parámetros:
 
-  -adivinar --> palabra o frase que se utilizara para iterar.
+    -adivinar --> palabra o frase que se utilizara para iterar.
 
-  -categoria --> Categoria a la que pertenece la palabra o frase a adivinar.
+    -categoria --> Categoria a la que pertenece la palabra o frase a adivinar.
 
-  -Esta funcion Pedirá al usuario que ingresemos una letra y comenzará a iterar letra por letra buscando similitudes con las letras que vamos ingresando mostrando los errores, termina cuando al iterar no encuentra guiones bajos también cuando pierdes tus 6 intentos.
+    -Esta funcion Pedirá al usuario que ingresemos una letra y comenzará a iterar letra por letra buscando similitudes con las letras que vamos ingresando mostrando los errores, termina cuando al iterar no encuentra guiones bajos también cuando pierdes tus 6 intentos.
 
-  -Puedes terminar el juego cuando desees si ingresas la palabra "SALIR"
-  """
+    -Puedes terminar el juego cuando desees si ingresas la palabra "SALIR"
+    """
     adivinar = adivinar.upper()
     intentos = 0
     errores = []
@@ -259,13 +260,12 @@ def jugar(adivinar, categoria):
 
 def volver_sala(funcion):
     """
-    Parámetro:
-
-    -funcion --> función a ejecutar
-    
     -Trabaja con el módulo "dibujo"
-
-    -Esta funcion pregunta al usuario si quisiera volver a la sala principal o desea salir completamente del juego y si ingresa una opción inválida mostrara un dibujo de error.
+    Parámetro:
+        -funcion --> función a ejecutar
+    
+    -Esta funcion pregunta al usuario si quisiera volver a la sala principal o desea salir 
+    completamente del juego y si ingresa una opción inválida mostrara un dibujo de error.
     """
     limpiar_consola()
     D.volver()

@@ -5,16 +5,17 @@ import dibujo as D
 
 def reemplazar(ruta, valores):
     """
-  Parametros:
+    Parametros:
 
-  -ruta --> ruta de una de las historias .txt aleatorias.
+        -ruta --> ruta de una de las historias.txt aleatorias.
 
-  -valores --> diccionario con las palabras que reemplazarán en la historia asignada.
+        -valores --> diccionario con las palabras que reemplazarán en la historia asignada.
 
-  Esta funcion abre la ruta y reemplaza las palabras que se encuentren en los keys de "valores"
-  """
-    with open(ruta, 'r') as f:
-        filedata = f.read()
+    Esta funcion abre la ruta y reemplaza las palabras que se encuentren en los keys de "valores". 
+    Luego muestra la historia generada en pantalla.
+    """
+    with open(ruta, 'r') as archivo:
+        filedata = archivo.read()
     for i in valores:
         filedata = filedata.replace(i, valores[i])
 
@@ -29,8 +30,8 @@ def reemplazar(ruta, valores):
 
 def historia1():
     """
-  Esta funcion muestra los inputs de la historia 1 y retorna el diccionario registrado.
-  """
+    Esta funcion muestra los inputs de la historia 1 y retorna el diccionario registrado.
+    """
     D.menu_mad_story()
     tu_nombre = input("Tu nombre: ").capitalize()
     cantante_masculino = input("Cantante masculino: ").capitalize()
@@ -64,8 +65,8 @@ def historia1():
 
 def historia2():
     """
-  Esta funcion muestra los inputs de la historia 2 y retorna el diccionario registrado.
-  """
+    Esta funcion muestra los inputs de la historia 2 y retorna el diccionario registrado.
+    """
     D.menu_mad_story()
     nombre_madre = input("Nombre de tu madre: ").capitalize()
     nombre_mascota = input("Nombre de tu mascota: ").capitalize()
@@ -90,8 +91,8 @@ def historia2():
 
 def historia3():
     """
-  Esta funcion muestra los inputs de la historia 3 y retorna el diccionario registrado.
-  """
+    Esta funcion muestra los inputs de la historia 3 y retorna el diccionario registrado.
+    """
     D.menu_mad_story()
 
     tu_nombre = input("Ingrese tu nombre: ").capitalize()
@@ -121,8 +122,8 @@ def historia3():
 
 def historia4():
     """
-  Esta funcion muestra los inputs de la historia 4 y retorna el diccionario registrado.
-  """
+    Esta funcion muestra los inputs de la historia 4 y retorna el diccionario registrado.
+    """
     D.menu_mad_story()
     adjetivo = input("Ingrese un adjetivo:").capitalize()
 
@@ -153,8 +154,8 @@ def historia4():
 
 def historia5():
     """
-  Esta funcion muestra los inputs de la historia 5 y retorna el diccionario registrado.
-  """
+    Esta funcion muestra los inputs de la historia 5 y retorna el diccionario registrado.
+    """
     D.menu_mad_story()
 
     Nombre_Niño = input("Ingresa un nombre de tu tío: ").capitalize()

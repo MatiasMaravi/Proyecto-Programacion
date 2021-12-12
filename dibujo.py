@@ -221,11 +221,12 @@ def muerte():
     sleep(2)
     F.limpiar_consola()
 
-def proximamente():
+def animacion_proximamente():
     """
     Trabaja con la función "sleep" del módulo "time".
     Dibuja en pantalla una animación de "signos de interrogacion".
     """
+    print("Proximamente...")
     sleep(0.1)
     print('''     ╔═══╗''', end="")
     print('''    ╔═══╗''', end="")
@@ -275,7 +276,7 @@ def error(opcion):
   2. "Solo responder 'si' o 'no'
   3. "No repetir letras"
   4. "Solo ingresa una letra a la vez"
-  5. "Solo ingresa letras del abecedario"
+  5. "Solo ingresa letras o numeros"
   """
   F.limpiar_consola()
   if opcion == 1:
@@ -310,9 +311,9 @@ def error(opcion):
 
   elif opcion == 5:
     print('''
-╔══════════════════════════════════════════╗ 
-║ Por favor solo ingresa LETRAS ¯\_(ツ)_/¯ ║ 
-╚══════════════════════════════════════════╝
+╔════════════════════════════════════════════════════╗ 
+║ Por favor solo ingresa LETRAS o NUMEROS ¯\_(ツ)_/¯ ║ 
+╚════════════════════════════════════════════════════╝
   ''')
 
 def imprimir_ahorcado(errores):
@@ -467,16 +468,23 @@ A continuacion tienes que responder las siguientes preguntas:
 
 
 def listo():
-  F.limpiar_consola()
-  print('''
-        █    █   ▄▀▀▀  ▀█▀  █▀▀█   █
-        █    █   ▀▬▬▄   █   █  █   █
-        █▄▄  █   ▄▄▄▀   █   █▄▄█   ▄
-  ''')
-  sleep(1.0)
+    """
+    Limpia la consola y dibuja la palabra "Listo" en pantalla.
+    """
+
+    F.limpiar_consola()
+    print('''
+            █    █   ▄▀▀▀  ▀█▀  █▀▀█   █
+            █    █   ▀▬▬▄   █   █  █   █
+            █▄▄  █   ▄▄▄▀   █   █▄▄█   ▄
+    ''')
+    sleep(1.0)
 
 def clasificaciones():
-  print("""
+    """
+    Dibuja el logo de "clasificaciones" en pantalla.
+    """
+    print("""
 ▄▄▄ ▄   ▄▄▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄▄▄ ▄▄▄ ▄▄▄ ▄ ▄▄▄ ▄   ▄ ▄▄▄ ▄▄▄
 █   █   █▄█ █▄▄ █ █▄  █ █   █▄█ █   █ █ █ █▀▄ █ █▄▄ █▄▄
 █▄▄ █▄▄ █ █ ▄▄█ █ █   █ █▄▄ █ █ █▄▄ █ █▄█ █  ▀█ █▄▄ ▄▄█

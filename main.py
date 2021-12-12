@@ -1,14 +1,14 @@
 import funcion as F # Importa las funciones del archivo función. Se apoda F.
 import dibujo as D #Importa funciones de los dibujos. Se apoda D.
 import categoria as C #Importa categorías de las opciones. Se apoda C.
+import historias as H #Importa las fuciones del archivo historias. Se apoda H.
 from random import choice as R #Importa la funcion para escoger una variable aleatoria de una lista. Se apoda R.
 from time import sleep #Importa una función para dormir al programa por un número de segundos. 
 from operator import itemgetter   #Importa la función para asignar indices en una lista, tupla o diccionario.
-import json
-import historias as H #Importa las fuciones del archivo historias. Se apoda H.
+from json import load #Importa la funcion para poder cargar un archivo json como un diccionario en python
 
 def opcion_1():
-    '''
+    """
     Presenta las funcionalidades del Juego del Ahorcado.
 
     -Trabaja con el módulo "dibujo o D" y con las función "Menu_El_Ahorcado" y la función "error".
@@ -16,7 +16,7 @@ def opcion_1():
     -Esta función pide al usuario escoger cualquiera de las categorias disponibles.
   
     -Si ingresas una opcion inválida se ejecutara nuevamente la función.
-    '''
+    """
     opcion = D.menu_ahorcado()
     if opcion == "1":
         F.limpiar_consola()
@@ -59,11 +59,11 @@ def opcion2():
     """
     Presenta las funcionalidades del Juego de Mad Story
 
-    -Trabaja con los módulos "dibujo o D" y "hola".
+    -Trabaja con los módulos "dibujo o D", "categoria o C" y el modulo "historias o H".
 
-    -En el módulo "historias o H" pide al usuario que introduzca los datos correspondientes y que estos reemplazarán a los términos de la historia seleccionada en diccionario "valores".
+    -El programa selecciona una historia aleatoria y pide al usuario responder unas preguntas para asi
+    poder generar la historia en pantalla.
 
-    { aun falta contenido }
     """
     historia = R(C.historias)
     if historia == "historias/historia1.txt":
@@ -92,10 +92,11 @@ def opcion3():
     -Trabaja con el módulo "dibujo o D".
 
     -Esta función limpia la consola e imprime en pantalla "proximamente" y una pequeña animación.
-  """
+
+    -Luego regresa al menu principal.
+    """
     F.limpiar_consola()
-    print("Proximamente...\n")
-    D.proximamente()
+    D.animacion_proximamente()
     sleep(2)
     F.limpiar_consola()
 
@@ -103,14 +104,15 @@ def opcion4():
     """
     -Trabaja con el módulo "funcion o F"
     
-    -Esta función limpia la consola y muestra los puntajes recopilados de cada usuario en una lista de clasificaciones leidos del archivo "puntajes.json" actualizado.
+    -Esta función limpia la consola y muestra los puntajes recopilados de cada usuario 
+    en una lista de clasificaciones leidos del archivo "puntajes.json" de forma descendente.
 
-    -Pedirá al usuario que presione Enter para salir y se limpiará la consola.
+    -Pedirá al usuario que presione Enter para salir y volver al menu principal .
     """
     F.limpiar_consola()
     D.clasificaciones()
     with open('historias/puntajes.json','r') as jsonfile:
-        json_content = json.load(jsonfile) 
+        json_content = load(jsonfile) 
 
     nombres = sorted(json_content.items(), key=itemgetter(1),  reverse=True) #Lista de tuplas
     
@@ -123,25 +125,26 @@ def opcion4():
 
 def opcion5():
     """
-  Trabaja con el módulo "dibujo o D".
-  Esta función Limpia la consola e imprime en pantalla un mensaje de despedida con un dibujo.
-  """
+    Trabaja con el módulo "dibujo o D".
+    Esta función Limpia la consola e imprime en pantalla un mensaje de despedida con un dibujo.
+    """
     F.limpiar_consola()
     print("Adiós!!")
     D.despedida()
 
 
 def UTEC_GAMES():
-    '''
+    """
     -Trabaja con la función "menu_utec" del módulo "dibujo"
     
     -Es la primera función en ejecutar el programa y nos presentan los juegos de "UTEC GAMES".
 
-    -Esta función valida a través de distintas opciones. Si la opción del menú es 1 imprime las funciones del "Juego del ahorcado" y si ingresara la opción 2 imprime las funciones del "Mad Story".
+    -Esta función valida a través de distintas opciones. Si la opción del menú es 1 ejecuta el "Juego del ahorcado" y si ingresara la opción 2 ejecuta el juego de "Mad Story".
     
-    -Las opciones 3, 4 o 5 va a ejecutar las funciones correspondientes que no son juegos y en caso ingrese otro caracter va a imprimir un error.
+    -Las opciones 3, 4 o 5 va a ejecutar las funciones correspondientes que no son juegos y en caso ingrese otro caracter va a imprimir un error
+    y se ejecutara nuevamente la funcion.
 
-    '''
+    """
     Opcion_de_Menu = D.menu_utec()
     if Opcion_de_Menu == "1":
         D.introduccion()
