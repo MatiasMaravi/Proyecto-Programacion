@@ -56,36 +56,36 @@ def opcion_1():
         opcion_1()
 
 def opcion2():
-  """
-  Presenta las funcionalidades del Juego de Mad Story
-  
-  -Trabaja con los módulos "dibujo o D" y "hola".
+    """
+    Presenta las funcionalidades del Juego de Mad Story
 
-  -En el módulo "historias o H" pide al usuario que introduzca los datos correspondientes y que estos reemplazarán a los términos de la historia seleccionada en diccionario "valores".
+    -Trabaja con los módulos "dibujo o D" y "hola".
 
-  { aun falta contenido }
-  """
-  historia = R(C.historias)
-  if historia == "historias/historia1.txt":
-    F.limpiar_consola()
-    valores = H.historia1()
-    H.reemplazar(historia, valores)
-  elif historia == "historias/historia2.txt":
-    F.limpiar_consola()
-    valores = H.historia2()
-    H.reemplazar(historia, valores)
-  elif historia == "historias/historia3.txt":
-    F.limpiar_consola()
-    valores = H.historia3()
-    H.reemplazar(historia, valores)
-  elif historia == "historias/historia4.txt":
-    F.limpiar_consola()
-    valores = H.historia4()
-    H.reemplazar(historia, valores)
-  elif historia == "historias/historia5.txt":
-    F.limpiar_consola()
-    valores = H.historia5()
-    H.reemplazar(historia, valores)
+    -En el módulo "historias o H" pide al usuario que introduzca los datos correspondientes y que estos reemplazarán a los términos de la historia seleccionada en diccionario "valores".
+
+    { aun falta contenido }
+    """
+    historia = R(C.historias)
+    if historia == "historias/historia1.txt":
+        F.limpiar_consola()
+        valores = H.historia1()
+        H.reemplazar(historia, valores)
+    elif historia == "historias/historia2.txt":
+        F.limpiar_consola()
+        valores = H.historia2()
+        H.reemplazar(historia, valores)
+    elif historia == "historias/historia3.txt":
+        F.limpiar_consola()
+        valores = H.historia3()
+        H.reemplazar(historia, valores)
+    elif historia == "historias/historia4.txt":
+        F.limpiar_consola()
+        valores = H.historia4()
+        H.reemplazar(historia, valores)
+    elif historia == "historias/historia5.txt":
+        F.limpiar_consola()
+        valores = H.historia5()
+        H.reemplazar(historia, valores)
 
 def opcion3():
     """
@@ -164,4 +164,4 @@ def UTEC_GAMES():
 
 
 if __name__ == "__main__":
-  UTEC_GAMES()
+    UTEC_GAMES()
