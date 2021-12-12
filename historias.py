@@ -167,10 +167,10 @@ def historia5():
     sleep(1.0)
     D.listo()
     valores = {
-        "/Nombre_Niño/": Nombre_Niño,
+        "/Nombre_Ninio/": Nombre_Niño,
         "/nombre_colegio/": nombre_colegio,
         "/fenomeno_natural/": fenomeno_natural,
-        "/año/": año,
+        "/anio/": año,
         "/nombre_truco/": nombre_truco,
         "/nombre_curso/": nombre_curso,
     }
