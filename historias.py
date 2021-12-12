@@ -79,7 +79,7 @@ def historia2():
     valores = {
         "/nombre_madre/": nombre_madre,
         "/nombre_mascota/": nombre_mascota,
-        "/estacion_del_año/": estacion_del_año,
+        "/estacion_del_anio/": estacion_del_año,
         "/establecimiento/": establecimiento,
         "/festividad/": festividad,
         "/animal_salvaje/": animal_salvaje,
