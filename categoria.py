@@ -5,24 +5,26 @@ frases_de_disney = [
 ]
 
 videos_juegos = [
-    "Minecraft", "Valorant", "Counter Strike", "Super mario bros", "Among Us", "Dota 2", "Left 4 dead 2"
+    "Minecraft", "Valorant", "Counter Strike", "Super mario bros", "Among Us",
+    "Dota 2", "Left 4 dead 2"
 ]
 
 peliculas_mas_vistas = [
-    "Avengers End Game", "Avatar", "Titanic", "Star Wars", "Jurassic World"
+    "Avengers End Game", "Avatar", "Titanic", "Star Wars", "Jurassic World",
+    "Spider man 2", "toy story 2"
 ]
 
 deportes = ["Futbol", "Baloncesto", "Badminton", "Natacion", "Tenis de Mesa"]
 
 mujeres_historicas = [
     "Marie Curie", "Katherine Johnson", "Madre Teresa de Calcuta",
-    "Malala Yousafzai","Ana Frank"
+    "Malala Yousafzai", "Ana Frank"
 ]
 
 refranes = [
     "De tal palo tal astilla", "Mas vale prevenir que lamentar",
     "Al que madruga Dios lo ayuda", "Al mal tiempo buena cara",
-    "Hombre prevenido vale por dos"
+    "Hombre prevenido vale por 2"
 ]
 
 consejos = [
@@ -52,8 +54,8 @@ consejos = [
     "Recuerda que uno es dueño de lo que calla pero esclavo de lo que dice"
 ]
 
-historias = ["historias/historia1.txt",
-"historias/historia2.txt",
-"historias/historia3.txt",
-"historias/historia4.txt",
-"historias/historia5.txt"]
+historias = [
+    "historias/historia1.txt", "historias/historia2.txt",
+    "historias/historia3.txt", "historias/historia4.txt",
+    "historias/historia5.txt"
+]
