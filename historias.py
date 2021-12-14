@@ -1,7 +1,6 @@
 from time import sleep  #Importa una función para dormir al programa por un número de segundos.
 import funcion as F  # Importa las funciones del archivo función. Se apoda F.
-import dibujo as D
-
+import dibujo as D # Funciones de los dibujos
 
 def reemplazar(ruta, valores):
     """
@@ -125,14 +124,14 @@ def historia4():
     Esta funcion muestra los inputs de la historia 4 y retorna el diccionario registrado.
     """
     D.menu_mad_story()
-    adjetivo = input("Ingrese un adjetivo:").capitalize()
+    adjetivo = input("Ingrese un adjetivo: ").capitalize()
 
     apellido = input("Ingresa el apellido de tu familia: ").capitalize()
 
     un_lugar = input("Ingrese un distrito o ciudad: ").capitalize()
 
     nombre_presidente = input(
-        "Ingrese el nombre del presidente que más odias:").capitalize()
+        "Ingrese el nombre del presidente que más odias: ").capitalize()
 
     un_arma = input("Ingrese nombre de una arma: ")
 
